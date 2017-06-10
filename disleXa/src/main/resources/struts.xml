@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="home" namespace="/" extends="struts-default">
+		<action name="home" class="ar.edu.unlam.integrador.action.HomeAction">
+			<result name="SUCCESS">/jsp/home.jsp</result>
+		</action>
+	</package>
+</struts>
