@@ -4,5 +4,5 @@ public class HomeAction {
 	
 	public String execute(){		
 		return "SUCCESS";
-	}
+	}	
 }

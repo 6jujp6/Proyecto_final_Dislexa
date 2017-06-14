@@ -1,0 +1,30 @@
+ .navbar-brand {
+ 	    padding: 0px 40px !important;}
+    
+.navbar-inverse {
+    background-color:#4f004f;
+    border-color: #4f004f;    
+}
+
+.navbar {
+    position: relative;
+    min-height: 120px;
+    padding-top: 30px;
+    padding-left: 40px;	
+    padding-right: 55px;
+    border-radius: 0px;
+}
+
+.btn-default{
+	background-color:#107DFF;
+	color:#c3c3c3;
+}
+
+#imagen_home{
+	width: 100%;
+	 min-width:100px;
+}
+
+.div.jumbotron{
+	width: 100%;
+}
