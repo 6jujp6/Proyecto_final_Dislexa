@@ -1,6 +1,6 @@
 package ar.edu.unlam.integrador.action;
 
-public class HomeAction {	
+public class InstitucionAction {
 	public String execute(){		
 		return "SUCCESS";
 	}	

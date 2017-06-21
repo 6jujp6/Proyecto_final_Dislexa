@@ -1,7 +1,7 @@
 package ar.edu.unlam.integrador.action;
 
-public class HomeAction {	
+public class PacienteAction {
 	public String execute(){		
 		return "SUCCESS";
-	}	
+	}
 }
