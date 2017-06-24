@@ -39,6 +39,9 @@
 		<action name="mensaje" class="ar.edu.unlam.integrador.action.PacienteAction">
 			<result name="SUCCESS">/jsp/paciente/mensaje.jsp</result>
 		</action>
+		<action name="111libre" class="ar.edu.unlam.integrador.action.PacienteAction">
+			<result name="SUCCESS">/jsp/actividad/111libre.jsp</result>
+		</action>
 	</package>
 	<package name="profesional" namespace="/profesional" extends="default">
 		<action name="menu" class="ar.edu.unlam.integrador.action.ProfesionalAction">

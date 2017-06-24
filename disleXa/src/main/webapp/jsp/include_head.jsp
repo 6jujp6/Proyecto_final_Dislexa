@@ -9,3 +9,5 @@
 <script type="text/javascript" src="/disleXa/js/menu.js"></script>	
 <!-- ESTILOS -->
 <link rel="stylesheet" href="/disleXa/css/dislexa.css">
+<!-- VOZ -->
+<script src="http://code.responsivevoice.org/responsivevoice.js"></script>
