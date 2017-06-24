@@ -9,7 +9,7 @@
 			<input type="text" class="form-control" id="apellido">
 		</div>
 		<div class="row">
-			<label for=""fechaNac"">Fecha de nacimiento: </label>
+			<label for="fechaNac">Fecha de nacimiento: </label>
 			<input type="text" class="form-control" id="fechaNac">
 		</div>
 		<br>
