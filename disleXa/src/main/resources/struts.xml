@@ -5,9 +5,9 @@
 
 <struts>
 	<package name="default" extends="struts-default"></package>
-	
-	<package name="index" namespace="/" extends="default">	
-		<default-action-ref name="home"/>
+
+	<package name="index" namespace="/" extends="default">
+		<default-action-ref name="home" />
 		<action name="home" class="ar.edu.unlam.integrador.action.HomeAction">
 			<result name="SUCCESS">/jsp/index.jsp</result>
 		</action>
@@ -52,6 +52,24 @@
 		</action>
 		<action name="mensajes" class="ar.edu.unlam.integrador.action.ProfesionalAction">
 			<result name="SUCCESS">/jsp/profesional/mensajes.jsp</result>
+		</action>
+	</package>
+	<package name="registro_login" namespace="/registro_login"
+		extends="default">
+		<action name="registrarse" class="ar.edu.unlam.integrador.action.RegistrarseAction">
+			<result name="SUCCESS">/jsp/registro_login/registrarse.jsp</result>
+		</action>
+		<action name="login" class="ar.edu.unlam.integrador.action.RegistrarseAction">
+			<result name="SUCCESS">/jsp/registro_login/login.jsp</result>
+		</action>
+		<action name="regProfesional" class="ar.edu.unlam.integrador.action.RegistrarseAction">
+			<result name="SUCCESS">/jsp/registro_login/reg_profesional.jsp</result>
+		</action>
+		<action name="regInstituto" class="ar.edu.unlam.integrador.action.RegistrarseAction">
+			<result name="SUCCESS">/jsp/registro_login/reg_instituto.jsp</result>
+		</action>
+		<action name="activarResp" class="ar.edu.unlam.integrador.action.RegistrarseAction">
+			<result name="SUCCESS">/jsp/registro_login/activar_resp.jsp</result>
 		</action>
 	</package>
 </struts>
