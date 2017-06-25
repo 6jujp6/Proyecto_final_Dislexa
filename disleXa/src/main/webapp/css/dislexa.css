@@ -4,8 +4,8 @@
 
 /* TOOLBAR */    
 .navbar-inverse {
-    background-color:#4f004f;
-    border-color: #4f004f;    
+    background-color:#fff;
+    border-color: #fff;    
 }
 .navbar {
     position: relative;
@@ -17,10 +17,7 @@
 }
 
 /* BOTONES */
-.btn-default{
-	background-color:#107DFF;
-	color:#c3c3c3;
-}
+
 
 /* IMAGEN */
 #imagen_home{
