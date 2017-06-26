@@ -1,17 +1,19 @@
-<div class="container">
-		<p>Tipo de registro:</p>
+
+		<span>Tipo de registro:</span>
+		<br>
 		<a href="javascript:void(0);" id="login"
 			onclick="cargarActionContenido('registro_login/regInstituto','divContenido');">
-			<button type="button">Instituto</button>
+			<button type="button" class="btn btn-default">Instituto</button>
 		</a> <a href="javascript:void(0);" id="login"
-			onclick="cargarActionContenido('registro_login/regProfesional','divContenido');">
-			<button type="button">Profesional</button>
+			onclick="cargarActionContenido('paciente/menu','divContenido');">
+			<button type="button" class="btn btn-default">Profesional</button>
 		</a>
-		<p>
+				<br>
+		
+		<span>
 			Activar usuario "Responsable" <a href="javascript:void(0);"
 				id="login"
 				onclick="cargarActionContenido('registro_login/activarResp','divContenido');">
 				Click aqui</a>
-		</p>
-</div>
+		</span>
 <br>

@@ -1,11 +1,11 @@
-<div class="row">
+<div class="jumbotron">
 	<div class="container">
 		<div class="row">
 			<label for="nombre">Registro Instituto: </label>
 		</div>
 		<div class="row">
-			<label for="nombre">Nombre de Institutcion: </label> <input type="text"
-				class="form-control" id="nombre">
+			<label for="nombre">Nombre de Institutcion: </label> <input
+				type="text" class="form-control" id="nombre">
 		</div>
 		<div class="row">
 			<label for="mail">Mail: </label> <input type="email"

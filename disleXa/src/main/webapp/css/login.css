@@ -1,0 +1,52 @@
+.registro {
+	position: absolute;
+	width: 30%;
+	display: none;
+-webkit-box-shadow: 10px 11px 23px -8px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 11px 23px -8px rgba(0,0,0,0.75);
+box-shadow: 10px 11px 23px -8px rgba(0,0,0,0.75);
+	border-radius: 5px;
+	right: 2%;
+}
+
+.arrow-up1 {
+	width: 0;
+	height: 0;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-bottom: 15px solid #B21D81;
+	right: 30%;
+	position: absolute;
+	top: -10px;
+
+}
+
+.login {
+	position: absolute;
+	width: 30%;
+	display: none;
+-webkit-box-shadow: 10px 11px 23px -8px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 11px 23px -8px rgba(0,0,0,0.75);
+box-shadow: 10px 11px 23px -8px rgba(0,0,0,0.75);
+	border-radius: 5px;
+	right: 1%;
+}
+
+.arrow-up2 {
+	width: 0;
+	height: 0;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-bottom: 15px solid #B21D81;
+	right: 10%;
+	position: absolute;
+	top: -10px;
+
+}
+.formholder {
+	background: #B21D81;
+	width: 100%;
+	border-radius: 5px;
+	padding: 10px;
+	color:#fff;
+}

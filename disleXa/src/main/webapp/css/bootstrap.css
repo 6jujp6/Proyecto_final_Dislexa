@@ -1348,7 +1348,7 @@ body {
 	font-size: 14px;
 	line-height: 1.42857143;
 	color: #333;
-	background-color: #fff
+	background-color: #fff;
 }
 
 button, input, select, textarea {
@@ -1827,40 +1827,40 @@ pre code {
 }
 
 .container {
-	padding-right: 15px;
-	padding-left: 15px;
-	margin-right: auto;
-	margin-left: auto
+	padding-right: 10px;
+	padding-left: 10px;
+	margin: auto;
+/* 	margin-left: auto */
 }
 
 @media ( min-width :768px) {
 	.container {
-		width: 750px
+		width: 98%
 	}
 }
 
 @media ( min-width :992px) {
 	.container {
-		width: 970px
+		width: 98%
 	}
 }
 
 @media ( min-width :1200px) {
 	.container {
-		width: 1170px
+		width: 98%
 	}
 }
 
 .container-fluid {
-	padding-right: 15px;
-	padding-left: 15px;
+	padding-right: 10px;
+	padding-left: 10px;
 	margin-right: auto;
 	margin-left: auto
 }
 
 .row {
-	margin-right: -15px;
-	margin-left: -15px
+/* 	margin-right: -15px; */
+/* 	margin-left: -15px */
 }
 
 .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3,
@@ -4526,8 +4526,8 @@ select[multiple].input-group-sm>.form-control, select[multiple].input-group-sm>.
 
 .navbar {
 	position: relative;
-	min-height: 50px;
-	margin-bottom: 20px;
+	min-height: 5%;
+	margin-bottom: 5px;
 	border: 1px solid transparent
 }
 
@@ -4643,6 +4643,7 @@ select[multiple].input-group-sm>.form-control, select[multiple].input-group-sm>.
 
 .navbar-brand {
 	float: left;
+	width:50%;
 	height: 50px;
 	padding: 15px 15px;
 	font-size: 18px;
@@ -4655,7 +4656,7 @@ select[multiple].input-group-sm>.form-control, select[multiple].input-group-sm>.
 
 .navbar-brand>img {
 	display: block;
-    width: 50%;
+    width: 80%;
 }
 
 @media ( min-width :768px) {
@@ -4879,7 +4880,6 @@ select[multiple].input-group-sm>.form-control, select[multiple].input-group-sm>.
 	}
 	.navbar-right {
 		float: right !important;
-		margin-right: -15px
 	}
 	.navbar-right ~.navbar-right {
 		margin-right: 0
@@ -5396,8 +5396,9 @@ a.badge:focus, a.badge:hover {
 	padding-top: 30px;
 	padding-bottom: 30px;
 	margin-bottom: 30px;
+	margin-top:10px;
 	color: inherit;
-	background-color: #eee
+	background-color: #fff;
 }
 
 .jumbotron .h1, .jumbotron h1 {
@@ -6388,13 +6389,9 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus,
 
 .well {
 	min-height: 20px;
-	padding: 19px;
+/* 	padding: 19px; */
 	margin-bottom: 20px;
-	background-color: #f5f5f5;
-	border: 1px solid #e3e3e3;
-	border-radius: 4px;
-	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
-	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05)
+
 }
 
 .well blockquote {

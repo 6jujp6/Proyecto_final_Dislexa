@@ -4,4 +4,4 @@ function cargarActionContenido(action, div){
 			alert("Error al cargar la opcion. Error " + status);
 		}
 	});
-}
+};
