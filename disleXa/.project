@@ -39,4 +39,31 @@
 		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/main/webapp/images/parque.jpg</name>
+			<type>1</type>
+			<location>C:/Users/Maxi Rodriguez/Desktop/TIF/Parte 1 test/Imagenes/parque.jpg</location>
+		</link>
+		<link>
+			<name>src/main/webapp/images/pava.jpg</name>
+			<type>1</type>
+			<location>C:/Users/Maxi Rodriguez/Desktop/TIF/Parte 1 test/Imagenes/pava.jpg</location>
+		</link>
+		<link>
+			<name>src/main/webapp/images/televisor.jpg</name>
+			<type>1</type>
+			<location>C:/Users/Maxi Rodriguez/Desktop/TIF/Parte 1 test/Imagenes/televisor.jpg</location>
+		</link>
+		<link>
+			<name>src/main/webapp/images/tenedor.jpg</name>
+			<type>1</type>
+			<location>C:/Users/Maxi Rodriguez/Desktop/TIF/Parte 1 test/Imagenes/tenedor.jpg</location>
+		</link>
+		<link>
+			<name>src/main/webapp/images/vaso.jpg</name>
+			<type>1</type>
+			<location>C:/Users/Maxi Rodriguez/Desktop/TIF/Parte 1 test/Imagenes/vaso.jpg</location>
+		</link>
+	</linkedResources>
 </projectDescription>
