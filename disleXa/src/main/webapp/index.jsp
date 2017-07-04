@@ -36,7 +36,7 @@
 							onclick="cargarActionContenido('registro_login/regInstituto','nuevo');">
 							<button type="button" class="btn btn-default">Instituto</button>
 						</a> <a href="javascript:void(0);" id="login"
-							onclick="cargarActionContenido('paciente/menu','nuevo');">
+							onclick="cargarActionContenido('responsable/menu','nuevo');">
 							<button type="button" class="btn btn-default">Profesional</button>
 						</a> <br> <span> Activar usuario "Responsable" <a
 							href="javascript:void(0);" id="login"
@@ -76,14 +76,7 @@
 
 		</div>
 	</div>
-	<!-- 	<div class="registro"> -->
-	<!-- 		<div class="arrow-up1"></div> -->
-	<!-- 		<div id="regi" class="formholder"></div> -->
-	<!-- 	</div> -->
-
-	<!-- 	<div class="row"> -->
-	<!-- 		<div class="well well-sm"> -->
-
+	
 	<!-- 			<div id="divContenido"> -->
 	<!-- 						<img src="/disleXa/images/escribiendo.jpg" id="imagen_home" -->
 	<!-- 				alt="Cinque Terre" /> -->
@@ -99,8 +92,7 @@
 	<!-- 					</div> -->
 	<!-- 				</div> -->
 	<!-- 			</div> -->
-	<!-- 		</div> -->
-	<!-- 	</div> -->
+
 	<jsp:include page="jsp/include_footer.jsp" />
 	<jsp:include page="jsp/include_js.jsp" />
 </body>

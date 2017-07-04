@@ -21,13 +21,6 @@
 						<span class="glyphicon glyphicon-log-in"></span> Login
 						</button>
 				</a></li>
-				<li><a href="javascript:void(0);" id="actividad"
-					onclick="cargarActionContenido('paciente/actividades', 'paciente');">
-						<button type="button" class="btn btn-default">
-						<span class="glyphicon glyphicon-log-in"></span> Prueba
-						</button>
-						
-				</a></li>
 			</ul>
 		</div>
 	</nav>

@@ -98,19 +98,19 @@ body {
 		rgba(0, 0, 0, 0.1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000',
 		endColorstr='#000000', GradientType=1);
-		display: inline;
+		display: inline !important;
 }
 
-.indexIzq {
-    width: 50%;
-    float: left;
-    padding: 50px;
+#indexIzq {
+    width: 50% !important;
+    float: left !important;
+    padding: 50px !important;
 }
 
-.indexDer {
-	width: 50%;
-    float: left;
-    padding: 50px;
+#indexDer {
+	width: 50% !important;
+    float: left !important;
+    padding: 50px !important;
 }
 
 /* CAROUSEL */

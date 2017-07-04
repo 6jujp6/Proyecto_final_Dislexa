@@ -78,4 +78,15 @@
 			<result name="SUCCESS">/jsp/registro_login/activar_resp.jsp</result>
 		</action>
 	</package>
+	<package name="responsable" namespace="/responsable" extends="default">
+		<action name="menu" class="ar.edu.unlam.integrador.action.ResponsableAction">
+			<result name="SUCCESS">/jsp/responsable/responsable.jsp</result>
+		</action>
+		<action name="datosPersonales" class="ar.edu.unlam.integrador.action.ResponsableAction">
+			<result name="SUCCESS">/jsp/responsable/datos_personales.jsp</result>
+		</action>
+		<action name="mensaje" class="ar.edu.unlam.integrador.action.ResponsableAction">
+			<result name="SUCCESS">/jsp/responsable/mensaje.jsp</result>
+		</action>
+	</package>
 </struts>
