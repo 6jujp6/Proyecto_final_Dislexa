@@ -9,6 +9,7 @@
 
 <!-- ESTILOS -->
 <link rel="stylesheet" href="/disleXa/css/login.css">
+<link rel="stylesheet" href="/disleXa/css/chat.css">
 <link rel="stylesheet" href="/disleXa/css/dislexa.css">
 <!-- JQUERY -->
 <script src="/disleXa/js/jquery-2.2.4.js"></script>

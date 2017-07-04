@@ -59,6 +59,12 @@
 		<action name="mensajes" class="ar.edu.unlam.integrador.action.ProfesionalAction">
 			<result name="SUCCESS">/jsp/profesional/mensajes.jsp</result>
 		</action>
+		<action name="msj_responsable" class="ar.edu.unlam.integrador.action.ProfesionalAction">
+			<result name="SUCCESS">/jsp/profesional/msj_responsable.jsp</result>
+		</action>
+		<action name="msj_paciente" class="ar.edu.unlam.integrador.action.ProfesionalAction">
+			<result name="SUCCESS">/jsp/profesional/msj_paciente.jsp</result>
+		</action>
 	</package>
 	<package name="registro_login" namespace="/registro_login"
 		extends="default">

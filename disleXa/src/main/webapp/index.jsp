@@ -36,7 +36,7 @@
 							onclick="cargarActionContenido('registro_login/regInstituto','nuevo');">
 							<button type="button" class="btn btn-default">Instituto</button>
 						</a> <a href="javascript:void(0);" id="login"
-							onclick="cargarActionContenido('responsable/menu','nuevo');">
+							onclick="cargarActionContenido('profesional/menu','nuevo');">
 							<button type="button" class="btn btn-default">Profesional</button>
 						</a> <br> <span> Activar usuario "Responsable" <a
 							href="javascript:void(0);" id="login"
