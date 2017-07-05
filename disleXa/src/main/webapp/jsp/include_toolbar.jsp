@@ -6,7 +6,7 @@
 		<div class="container-fluid">
 
 				<a class="navbar-brand" href="/disleXa"><img alt="Brand"
-					id="logo" src="/disleXa/images/isologo.png"></a>
+					id="logo" src="/disleXa/images/isologo/isologo.png"></a>
 
 			<ul class="nav navbar-nav navbar-right">
 <!-- 				<li><a href="javascript:void(0);" id="regis" -->

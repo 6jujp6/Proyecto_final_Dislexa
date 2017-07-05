@@ -8,13 +8,13 @@
 .navbar-inverse {
 	background-color: #fff;
 	border-color: #fff;
-	height: 80px !important;
+	height: 20% !important;
 	padding-top: 5px !important;
 	margin: 0px !important;
+	z-index: 2;
 }
 
 .container-fluid {
-	/* 	height: 80px; */
 	
 }
 
@@ -36,43 +36,49 @@
 
 .div.jumbotron {
 	width: 100%;
+	margin: 10px;
 }
 
 /* FOOTER */
 .bg-4 {
-	position: absolute;
+/* 		position: absolute; */
 	background-color: #fff;
-	/* 	color: #fff; */
 	padding-top: 7px;
-	width: 100%;
+
 	-webkit-box-shadow: 0px -10px 23px -8px rgba(0, 0, 0, 0.75);
 	-moz-box-shadow: 0px -10px 23px -8px rgba(0, 0, 0, 0.75);
 	box-shadow: 0px -10px 23px -8px rgba(0, 0, 0, 0.75);
 	z-index: 2;
+	width: 100%;
+/* 	margin-top: 10px; */
+/* 		border-radius: 50px; */
 }
 
 /* BODY */
-body {
-	background: url(../images/background.jpg) no-repeat center center fixed;
+html, body {
+	background: url(../images/design/background0.jpg) no-repeat center
+		center !important;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	min-height: 500px !important;
+	height: 100%;
+}
+
+.nuevo {
+
 }
 
 #divContenido {
-	/* 	background: #107DFF; */
-	/* 	border-radius: 5px; */
-	
+	height: 80%;
 }
 
 .row {
 	margin: 0 !important;
 }
 
-.container{
-	margin-top:10px;
+.container {
+	margin-top: 10px;
 }
 
 /* INDEX */
@@ -98,30 +104,34 @@ body {
 		rgba(0, 0, 0, 0.1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000',
 		endColorstr='#000000', GradientType=1);
-		display: inline !important;
+	display: inline !important;
 }
 
 #indexIzq {
-    width: 50% !important;
-    float: left !important;
-    padding: 50px !important;
+	width: 50% !important;
+	float: left !important;
+	padding: 50px !important;
 }
 
 #indexDer {
 	width: 50% !important;
-    float: left !important;
-    padding: 50px !important;
+	float: left !important;
+	padding: 50px !important;
 }
 
 /* CAROUSEL */
+.carousel-indicators{
+	position: inherit;
+}
 .carousel {
-	/* 	background: #2f4357; */
 	height: 100%;
 	z-index: 0;
 }
 
 .carousel .item {
 	min-height: 280px;
+	height: 100%;
+	overflow: hidden;
 	/* Prevent carousel from being distorted if for some reason image doesn't load */
 }
 
@@ -129,9 +139,8 @@ body {
 	margin: 0 auto; /* Align slide image horizontally center */
 }
 
-.bs-example {
-	width: cover;
-	height: cover;
+#myCarousel {
+	position: fixed;
 }
 
 .slide {

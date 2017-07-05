@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<link rel="icon" type="image/png" href="/disleXa/images/iso.png">
+<link rel="icon" type="image/png" href="/disleXa/images/isologo/iso.png">
 
 <!-- BOOTSTRAP -->
 <link rel="stylesheet"
