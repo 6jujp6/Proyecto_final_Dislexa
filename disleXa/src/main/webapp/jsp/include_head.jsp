@@ -1,6 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-<<<<<<< HEAD
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 
 <!-- JQUERY -->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>	
@@ -20,8 +18,6 @@
 <script type="text/javascript" src="/disleXa/js/menu.js"></script>	
 <!-- ESTILOS -->
 <link rel="stylesheet" href="/disleXa/css/dislexa.css">
-=======
-	pageEncoding="ISO-8859-1"%>
 <link rel="icon" type="image/png" href="/disleXa/images/isologo/iso.png">
 
 <!-- BOOTSTRAP -->
@@ -42,4 +38,3 @@
 <script type="text/javascript" src="/disleXa/js/menu.js"></script>
 <!-- VOZ -->
 <script src="/disleXa/js/responsivevoice.js"></script>
->>>>>>> 6864dafb81be7e5418fc50237a83d8e957ed720f

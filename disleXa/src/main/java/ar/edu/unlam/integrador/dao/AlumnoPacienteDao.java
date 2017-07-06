@@ -10,8 +10,6 @@ import org.hibernate.criterion.Restrictions;
 
 import ar.edu.unlam.integrador.dao.base.BaseDao;
 import ar.edu.unlam.integrador.entities.AlumnoPaciente;
-import ar.edu.unlam.integrador.entities.Institucion;
-import ar.edu.unlam.integrador.entities.Usuario;
 
 public class AlumnoPacienteDao extends BaseDao<AlumnoPaciente>{
     

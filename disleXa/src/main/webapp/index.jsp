@@ -6,21 +6,6 @@
 <meta charset="UTF-8">
 <jsp:include page="/jsp/include_head.jsp" />
 </head>
-<<<<<<< HEAD
-<body>	
-	<jsp:include page="jsp/include_toolbar.jsp" />
-	<div class="row">
-		<div class="well well-sm">
-			<div id="divContenido">
-				<img src="/disleXa/images/escribiendo.jpg" id="imagen_home" class="img-rounded" alt="Cinque Terre"/>
-				<br>
-				<br>				
-				<div class="container">
-					<div class="jumbotron">						
-					  <h1>¡Te ayudamos con tu rendimiento escolar!</h1>
-					  <p>Dislexa es una aplicación cuya finalidad es ayudar con la problemática de las DEA a través de actividades y juegos.</p>
-					  <p><button type="button" class="btn btn-default">Saber más</button></p>
-=======
 <body>
 	<header>
 		<jsp:include page="jsp/include_toolbar.jsp" />
@@ -79,7 +64,6 @@
 					</div>
 					<div class="item">
 						<img src="/disleXa/images/design/escribiendox.png" alt="Third Slide">
->>>>>>> 6864dafb81be7e5418fc50237a83d8e957ed720f
 					</div>
 				</div>
 			</div>

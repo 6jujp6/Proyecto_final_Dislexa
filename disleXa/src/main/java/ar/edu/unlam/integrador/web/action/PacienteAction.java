@@ -1,7 +1,5 @@
 package ar.edu.unlam.integrador.web.action;
 
-import ar.edu.unlam.integrador.entities.Usuario;
-import ar.edu.unlam.integrador.service.FactoryService;
 import ar.edu.unlam.integrador.web.base.BaseAction;
 
 public class PacienteAction extends BaseAction {

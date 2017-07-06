@@ -1,7 +1,5 @@
 package ar.edu.unlam.integrador.service;
 
-import java.util.List;
-
 import ar.edu.unlam.integrador.dao.InstitucionDao;
 import ar.edu.unlam.integrador.entities.Institucion;
 import ar.edu.unlam.integrador.service.base.BaseService;

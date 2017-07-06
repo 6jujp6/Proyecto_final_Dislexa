@@ -2,7 +2,6 @@ package ar.edu.unlam.integrador.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.PrimaryKeyJoinColumn;
@@ -10,7 +9,6 @@ import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-import ar.edu.unlam.integrador.entities.base.BaseEntity;
 
 @Entity
 @Table(name="institucion")

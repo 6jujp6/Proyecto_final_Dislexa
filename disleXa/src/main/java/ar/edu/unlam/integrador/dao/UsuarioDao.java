@@ -10,7 +10,6 @@ import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Restrictions;
 
 import ar.edu.unlam.integrador.dao.base.BaseDao;
-import ar.edu.unlam.integrador.entities.Institucion;
 import ar.edu.unlam.integrador.entities.Usuario;
 
 public class UsuarioDao extends BaseDao<Usuario>{
