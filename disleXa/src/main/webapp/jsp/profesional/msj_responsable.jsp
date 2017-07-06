@@ -3,33 +3,35 @@
 	<div class="chat">
 		<div class="chat-history">
 			<ul class="chat-ul">
+				
+				<li class="clearfix">
+					<div class="message-data align-right">
+						<span class="message-data-name">Padre</span> <i
+							class="fa fa-circle me"></i>
+					</div>
+					<div class="message me-message float-right">Como va avanzando mi hijo?</div>
+				</li>
 				<li>
 					<div class="message-data">
 						<span class="message-data-name"><i class="fa fa-circle you"></i>
 							Tu</span>
 					</div>
-					<div class="message you-message">Como va mi progreso?</div>
+					<div class="message you-message">bien... tranqui</div>
 				</li>
+				
 				<li class="clearfix">
 					<div class="message-data align-right">
-						<span class="message-data-name">Profesional</span> <i
+						<span class="message-data-name">Padre</span> <i
 							class="fa fa-circle me"></i>
 					</div>
-					<div class="message me-message float-right">bien... tranqui</div>
+					<div class="message me-message float-right">Ah bueno... bien</div>
 				</li>
 				<li class="clearfix">
 					<div class="message-data">
 						<span class="message-data-name"><i class="fa fa-circle you"></i>
 							Tu</span>
 					</div>
-					<div class="message you-message">Ah bueno... bien</div>
-				</li>
-				<li class="clearfix">
-					<div class="message-data align-right">
-						<span class="message-data-name">Profesional</span> <i
-							class="fa fa-circle me"></i>
-					</div>
-					<div class="message me-message float-right">seee...</div>
+					<div class="message you-message">seee...</div>
 				</li>
 			</ul>
 		</div>

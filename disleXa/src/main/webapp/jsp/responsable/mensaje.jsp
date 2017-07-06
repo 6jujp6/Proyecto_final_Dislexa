@@ -8,7 +8,7 @@
 						<span class="message-data-name"><i class="fa fa-circle you"></i>
 							Tu</span>
 					</div>
-					<div class="message you-message">Como va mi progreso?</div>
+					<div class="message you-message">Como va avanzando mi hijo?</div>
 				</li>
 				<li class="clearfix">
 					<div class="message-data align-right">
