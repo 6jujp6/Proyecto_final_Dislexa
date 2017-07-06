@@ -4,75 +4,62 @@
 "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
-	<package name="default" extends="struts-default"></package>
-
-	<package name="index" namespace="/" extends="default">
-		<default-action-ref name="home" />
-		<action name="home" class="ar.edu.unlam.integrador.action.HomeAction">
-			<result name="SUCCESS">/jsp/index.jsp</result>
+	<package name="default" extends="struts-default, json-default"></package>
+	
+	<package name="index" namespace="/" extends="default">	
+		<default-action-ref name="home"/> 
+		<action name="login" class="ar.edu.unlam.integrador.web.action.HomeAction" method="login">
+			<result name="INSTITUCION">/jsp/institucion/institucion.jsp</result>
+			<result name="ALUMNO_PACIENTE">/jsp/paciente/paciente.jsp</result>
+			<result name="PROFESIONAL">/jsp/profesional/profesional.jsp</result>
 		</action>
 	</package>
 	<package name="institucion" namespace="/institucion" extends="default">
-		<action name="menu" class="ar.edu.unlam.integrador.action.InstitucionAction">
+		<action name="menu" class="ar.edu.unlam.integrador.web.action.InstitucionAction">
 			<result name="SUCCESS">/jsp/institucion/institucion.jsp</result>
 		</action>
-		<action name="misAlumnos" class="ar.edu.unlam.integrador.action.InstitucionAction">
+		<action name="misAlumnos" class="ar.edu.unlam.integrador.web.action.InstitucionAction">
 			<result name="SUCCESS">/jsp/institucion/alumnos.jsp</result>
 		</action>
-		<action name="datosPersonales" class="ar.edu.unlam.integrador.action.InstitucionAction">
+		<action name="datosPersonales" class="ar.edu.unlam.integrador.web.action.InstitucionAction">
 			<result name="SUCCESS">/jsp/institucion/datos_personales.jsp</result>
 		</action>
-		<action name="historico" class="ar.edu.unlam.integrador.action.InstitucionAction">
+		<action name="historico" class="ar.edu.unlam.integrador.web.action.InstitucionAction">
 			<result name="SUCCESS">/jsp/institucion/historico.jsp</result>
+		</action>
+		<action name="buscarAlumnos" class="ar.edu.unlam.integrador.web.action.AlumnoAction" method="buscarAlumnos">
+			<result name="success" type="json">
+				<param name="noCache">true</param>
+				<param name="root">listaAlumnoResultado</param>
+			</result>
 		</action>
 	</package>
 	<package name="paciente" namespace="/paciente" extends="default">
-		<action name="menu" class="ar.edu.unlam.integrador.action.PacienteAction">
+		<action name="menu" class="ar.edu.unlam.integrador.web.action.PacienteAction" method="menu">
 			<result name="SUCCESS">/jsp/paciente/paciente.jsp</result>
 		</action>
-		<action name="actividades" class="ar.edu.unlam.integrador.action.PacienteAction">
+		<action name="actividades" class="ar.edu.unlam.integrador.web.action.PacienteAction" method="actividades">
 			<result name="SUCCESS">/jsp/paciente/actividades.jsp</result>
 		</action>
-		<action name="datosPersonales" class="ar.edu.unlam.integrador.action.PacienteAction">
+		<action name="datosPersonales" class="ar.edu.unlam.integrador.web.action.PacienteAction" method="datosPersonales">
 			<result name="SUCCESS">/jsp/paciente/datos_personales.jsp</result>
 		</action>
-		<action name="mensaje" class="ar.edu.unlam.integrador.action.PacienteAction">
+		<action name="mensaje" class="ar.edu.unlam.integrador.web.action.PacienteAction" method="mensaje">
 			<result name="SUCCESS">/jsp/paciente/mensaje.jsp</result>
-		</action>
-		<action name="111libre" class="ar.edu.unlam.integrador.action.PacienteAction">
-			<result name="SUCCESS">/jsp/actividad/111libre.jsp</result>
-		</action>
+		</action>		
 	</package>
 	<package name="profesional" namespace="/profesional" extends="default">
-		<action name="menu" class="ar.edu.unlam.integrador.action.ProfesionalAction">
+		<action name="menu" class="ar.edu.unlam.integrador.web.action.ProfesionalAction">
 			<result name="SUCCESS">/jsp/profesional/profesional.jsp</result>
 		</action>
-		<action name="pacientes" class="ar.edu.unlam.integrador.action.ProfesionalAction">
+		<action name="pacientes" class="ar.edu.unlam.integrador.web.action.ProfesionalAction">
 			<result name="SUCCESS">/jsp/profesional/pacientes.jsp</result>
 		</action>
-		<action name="datosPersonales" class="ar.edu.unlam.integrador.action.ProfesionalAction">
+		<action name="datosPersonales" class="ar.edu.unlam.integrador.web.action.ProfesionalAction">
 			<result name="SUCCESS">/jsp/profesional/datos_personales.jsp</result>
 		</action>
-		<action name="mensajes" class="ar.edu.unlam.integrador.action.ProfesionalAction">
+		<action name="mensajes" class="ar.edu.unlam.integrador.web.action.ProfesionalAction">
 			<result name="SUCCESS">/jsp/profesional/mensajes.jsp</result>
-		</action>
-	</package>
-	<package name="registro_login" namespace="/registro_login"
-		extends="default">
-		<action name="registrarse" class="ar.edu.unlam.integrador.action.RegistrarseAction">
-			<result name="SUCCESS">/jsp/registro_login/registrarse.jsp</result>
-		</action>
-		<action name="login" class="ar.edu.unlam.integrador.action.RegistrarseAction">
-			<result name="SUCCESS">/jsp/registro_login/login.jsp</result>
-		</action>
-		<action name="regProfesional" class="ar.edu.unlam.integrador.action.RegistrarseAction">
-			<result name="SUCCESS">/jsp/registro_login/reg_profesional.jsp</result>
-		</action>
-		<action name="regInstituto" class="ar.edu.unlam.integrador.action.RegistrarseAction">
-			<result name="SUCCESS">/jsp/registro_login/reg_instituto.jsp</result>
-		</action>
-		<action name="activarResp" class="ar.edu.unlam.integrador.action.RegistrarseAction">
-			<result name="SUCCESS">/jsp/registro_login/activar_resp.jsp</result>
 		</action>
 	</package>
 </struts>

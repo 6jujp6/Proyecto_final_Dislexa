@@ -1,32 +1,152 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>ar.edu.unlam.integrador</groupId>
-  <artifactId>disleXa</artifactId>
-  <packaging>war</packaging>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>disleXa Maven Webapp</name>
-  <url>http://maven.apache.org</url>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-	    <groupId>javax.servlet</groupId>
-	    <artifactId>javax.servlet-api</artifactId>
-	    <version>3.1.0</version>
-	    <scope>provided</scope>
-	</dependency>
-	<dependency>
-		<groupId>org.apache.struts</groupId>
-		<artifactId>struts2-core</artifactId>
-		<version>2.3.1.2</version>
-	</dependency>
-</dependencies>
+<project 
+	xmlns="http://maven.apache.org/POM/4.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="
+			http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd ">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>ar.edu.unlam.integrador</groupId>
+	<artifactId>disleXa</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>disleXa Maven Webapp</name>
+ 	<properties>
+ 			<struts2.version>2.3.31</struts2.version>
+ 			<spring.version>4.2.5.RELEASE</spring.version>
+			<HikariCP-java6.version>2.3.13</HikariCP-java6.version>
+			<hibernate-validator.version>5.0.3.Final</hibernate-validator.version>
+			<hibernate.version>4.2.21.Final</hibernate.version>
+			<jboss-logging.version>3.2.1.Final</jboss-logging.version>
+			<ehcache.version>2.6.9</ehcache.version>
+	</properties>
+ 	<url>http://maven.apache.org</url>
+	<dependencyManagement>
+		<dependencies>
+		    <dependency>
+		        <groupId>org.springframework</groupId>
+		        <artifactId>spring-framework-bom</artifactId>
+		        <version>${spring.version}</version>
+		        <type>pom</type>
+		        <scope>import</scope>
+		    </dependency>
+		</dependencies>
+	</dependencyManagement>
+	<dependencies>
+		<dependency>
+		   <groupId>junit</groupId>
+		   <artifactId>junit</artifactId>
+		   <version>3.8.1</version>
+		   <scope>test</scope>
+		</dependency>
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>javax.servlet-api</artifactId>
+		    <version>3.1.0</version>
+		    <scope>provided</scope>
+		</dependency>
+		
+		<!-- STRUTS 2 DEPENDENCIAS -->
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-json-plugin</artifactId>
+			<version>${struts2.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>javassist</groupId>
+					<artifactId>javassist</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-spring-plugin</artifactId>
+			<version>${struts2.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>5.1.6</version>
+		</dependency>
+		
+		<!-- SPRING 4 DEPENDENCIAS -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+		</dependency>
+		<!-- HIBERNATE 4 -->		
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.zaxxer</groupId>
+			<artifactId>HikariCP-java6</artifactId>
+			<version>${HikariCP-java6.version}</version>
+		</dependency>	
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>${hibernate-validator.version}</version>
+		</dependency>
+			<!-- SPRING 4 DEPENDENCIAS -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+		</dependency>
+  		<dependency>
+	    	<groupId>org.apache.logging.log4j</groupId>
+		    <artifactId>log4j-core</artifactId>
+		    <version>2.8.2</version>
+  		</dependency>
+  		<dependency>
+      		<groupId>org.springframework</groupId>
+	      	<artifactId>spring-web</artifactId>
+   		</dependency>
+  		<!-- EHCache -->
+		 <dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-ehcache</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache-core</artifactId>
+			<version>${ehcache.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.logging</groupId>
+			<artifactId>jboss-logging</artifactId>
+			<version>${jboss-logging.version}</version>
+		</dependency>	 
+	</dependencies>
   <build>
-    <finalName>disleXa</finalName>
+   <finalName>disleXa</finalName>
+   <plugins>
+			<!-- PARA COMPILAR -->
+
+
+			<!-- PARA COMPILAR GENERAR EL WAR -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>${maven-war-plugin.version}</version>
+				<configuration>
+					<!-- SE AGREGA EL JavaAppsConfig -->
+					<webResources>	
+						<resource>
+							<directory>JavaAppsConfig</directory>
+							<targetPath>WEB-INF/classes</targetPath>
+						</resource>
+					</webResources>
+					<!-- PARA ESCRIBIR EL METAINF -->
+					<archive>
+						<manifest>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin> 
+		</plugins>
   </build>
 </project>

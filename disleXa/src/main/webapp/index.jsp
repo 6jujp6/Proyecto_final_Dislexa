@@ -8,7 +8,6 @@
 </head>
 <body>	
 	<jsp:include page="jsp/include_toolbar.jsp" />
-	<div id="regi"></div>
 	<div class="row">
 		<div class="well well-sm">
 			<div id="divContenido">

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+    	http://www.springframework.org/schema/beans		http://www.springframework.org/schema/beans/spring-beans.xsd
+    	http://www.springframework.org/schema/context 	http://www.springframework.org/schema/context/spring-context.xsd
+   ">
+	<bean id="factoryService" class="ar.edu.unlam.integrador.service.FactoryService">
+		<constructor-arg ref="usuarioService" />
+		<constructor-arg ref="alumnoPacienteService" />
+	</bean>
+	
+	<bean id="usuarioService" class="ar.edu.unlam.integrador.service.UsuarioService">
+		<property name="usuarioDao" ref="usuarioDao" />
+	</bean>	
+	<bean id="alumnoPacienteService" class="ar.edu.unlam.integrador.service.AlumnoPacienteService">
+		<property name="alumnoPacienteDao" ref="alumnoPacienteDao" />
+	</bean>	
+	<context:component-scan base-package="ar.edu.unlam.integrador" />
+</beans>

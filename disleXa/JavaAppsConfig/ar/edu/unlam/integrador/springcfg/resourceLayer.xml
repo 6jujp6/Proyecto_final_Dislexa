@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="    
+    http://www.springframework.org/schema/beans 	http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/tx 		http://www.springframework.org/schema/tx/spring-tx.xsd
+   ">
+   
+   <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
+   
+   <!-- CAPA DECLARACION CONFIGURACION DE CONEXION DE BASE DATOS -->
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:ar/edu/unlam/integrador/springcfg/jdbc.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!--========== Spring Data Source Local ========== --> 	 	
+ 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+    	<property name="poolName" value="springHikariCP" />
+    	<property name="connectionTestQuery" value="SELECT 1" />
+    	<property name="dataSourceClassName" value="${jdbc.mysql.dataSource}" />
+    	<property name="maximumPoolSize" value="${jdbc.mysql.maximumPoolSize}" />
+    	<property name="idleTimeout" value="${jdbc.mysql.idleTimeout}" />
+	
+	    <property name="dataSourceProperties">
+        	<props>
+	            <prop key="url">${jdbc.mysql.url}</prop>
+            	<prop key="user">${jdbc.mysql.username}</prop>
+            	<prop key="password">${jdbc.mysql.password}</prop>
+        	</props>
+    	</property>
+	</bean>
+	
+	<!-- HikariCP configuration -->
+	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
+	    <constructor-arg ref="hikariConfig" />
+	</bean>
+	
+	<!--========== FACTORY ========== -->	  	
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+    	<property name="dataSource" ref="dataSource" />
+    	<property name="packagesToScan">
+            <list>
+                <value>ar.edu.unlam.integrador.entities</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+				<prop key="hibernate.show_params">${hibernate.show_params:true}</prop>
+				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto:update}</prop>
+				<prop key="hibernate.connection.release_mode">after_transaction</prop>
+				<prop key="hibernate.transaction.flush_before_completion">true</prop>
+				<prop key="hibernate.transaction.auto_close_session">true</prop>
+				
+				<prop key="hibernate.cache.use_second_level_cache">true</prop>
+				<prop key="hibernate.cache.use_query_cache">true</prop>
+				<prop key="hibernate.generate_statistics">true</prop>
+				<prop key="net.sf.ehcache.configurationResourceName">/ehcache-config.xml</prop>
+            </props>
+        </property>             
+    </bean>    
+	
+	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />	
+	</bean>
+	
+    <tx:annotation-driven transaction-manager="transactionManager" />
+</beans>
