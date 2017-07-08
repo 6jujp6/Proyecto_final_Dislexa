@@ -1,7 +1,10 @@
 package ar.edu.unlam.integrador.service;
 
+import java.util.List;
+
 import ar.edu.unlam.integrador.dao.CursoDao;
 import ar.edu.unlam.integrador.entities.Curso;
+import ar.edu.unlam.integrador.entities.Institucion;
 import ar.edu.unlam.integrador.service.base.BaseService;
 
 public class CursoService extends BaseService{
@@ -25,6 +28,8 @@ public class CursoService extends BaseService{
 		this.cursoDao = cursoDao;
 	}
 	
-	
+	public List<Curso> buscarCursosPorInstitucion(Institucion institucion){
+		return getCursoDao().obtenerCursosPorInstitucion(institucion);
+	}
 	
 }

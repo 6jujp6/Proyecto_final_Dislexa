@@ -4,6 +4,7 @@ import java.util.List;
 
 import ar.edu.unlam.integrador.dao.AlumnoPacienteDao;
 import ar.edu.unlam.integrador.entities.AlumnoPaciente;
+import ar.edu.unlam.integrador.entities.Curso;
 import ar.edu.unlam.integrador.service.base.BaseService;
 
 public class AlumnoPacienteService extends BaseService{
@@ -22,8 +23,8 @@ public class AlumnoPacienteService extends BaseService{
 		this.alumnoPacienteDao = alumnoPacienteDao;
 	}
 	
-	public List<AlumnoPaciente> buscarAlumnoPaciente(){
-		List<AlumnoPaciente> alumnoPaciente = getAlumnoPacienteDao().buscarAlumnoPaciente();
+	public List<AlumnoPaciente> buscarAlumnoPaciente(String nombre, String apellido, Long dni, List<Curso> cursos){
+		List<AlumnoPaciente> alumnoPaciente = getAlumnoPacienteDao().buscarAlumnoPaciente(nombre, apellido, dni, cursos);
 		return alumnoPaciente;
 	}
 

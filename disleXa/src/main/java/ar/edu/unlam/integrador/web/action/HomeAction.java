@@ -9,6 +9,7 @@ import ar.edu.unlam.integrador.web.base.BaseAction;
 public class HomeAction extends BaseAction {	
 
 	private static final long serialVersionUID = 1L;
+	private String email, pass;
 	
 	public HomeAction(){		
 	}
@@ -17,16 +18,17 @@ public class HomeAction extends BaseAction {
 		FactoryService factory = getFactoryService();
 		
 		//TODO OBTENER LOS DATOS DEL FORM, SACAR HARDCODE		
-		Usuario usuario = factory.getUsuarioService().buscarPorLogin("info@escuela7.com","123");
+		//Usuario usuario = factory.getUsuarioService().buscarPorLogin("info@escuela7.com","123");
+		Usuario usuario = factory.getUsuarioService().buscarPorLogin(email,pass);
 		Institucion ins= null;
 		if (usuario==null)
 			return "ERROR"; //NO EXISTE USUARIO		
 		else{
 			session.put("usuario", usuario);
 			
-			if (session.containsKey("usuario"))
-			   ins=(Institucion)session.get("usuario");
-			
+//			if (session.containsKey("usuario"))
+//			   ins=(Institucion)session.get("usuario");
+//			
 			TipoUsuario tipo = TipoUsuario.obtenerPorTipoObjeto(usuario.getClass());
 			switch(tipo){
 				case ALUMNO_PACIENTE:
@@ -39,4 +41,20 @@ public class HomeAction extends BaseAction {
 			}
 		}
 	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPass() {
+		return pass;
+	}
+
+	public void setPass(String pass) {
+		this.pass = pass;
+	}	
 }
