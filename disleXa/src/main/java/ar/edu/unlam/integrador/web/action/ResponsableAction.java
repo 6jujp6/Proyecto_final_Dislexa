@@ -1,4 +1,4 @@
-package ar.edu.unlam.integrador.action;
+package ar.edu.unlam.integrador.web.action;
 
 public class ResponsableAction {
 	public String execute(){		
