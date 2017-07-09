@@ -1,27 +1,25 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-
-<div class="row">
-	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
-
-				<a class="navbar-brand" href="/disleXa"><img alt="Brand"
-					id="logo" src="/disleXa/images/isologo/isologo.png"></a>
-
-			<ul class="nav navbar-nav navbar-right">		  		
-  			<!-- 				<li><a href="javascript:void(0);" id="regis" -->
-<!-- 					onclick="cargarActionContenido('registro_login/registrarse','regi');"> -->
-<!-- 						<button type="button" class="btn btn-default"> -->
-<!-- 							<span class="glyphicon glyphicon-user"></span> Registrarse -->
-<!-- 						</button> -->
-<!-- 				</a></li> -->
-				<li><a href="javascript:void(0);" id="logis"
-					onclick="cargarActionContenido('registro_login/login','login');">
-						<button type="button" class="btn btn-default">
-						<span class="glyphicon glyphicon-log-in"></span> Login
-						</button>
+<nav
+	class="navbar navbar-toggleable-md navbar-light fixed-top scrolling-navbar">
+	<div class="container">
+		<button class="navbar-toggler navbar-toggler-right" type="button"
+			data-toggle="collapse" data-target="#navbarNav1"
+			aria-controls="navbarNav1" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-brand" href="/disleXa"> <img
+			src="/disleXa/img/isologo/isologo.png" />
+		</a>
+		<div class="collapse navbar-collapse" id="navbarNav1">
+			<ul class="navbar-nav ml-auto">
+				<li><a href="javascript:void(0);"
+					onclick="cargarActionContenido('registro_login/login','derecha');">
+						<button type="button"
+							class="
+						btn btn-outline-black waves-effect waves-light">
+							Iniciar Sesion</button>
 				</a></li>
 			</ul>
 		</div>
-	</nav>
-</div>
+	</div>
+</nav>
