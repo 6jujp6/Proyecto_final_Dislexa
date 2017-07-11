@@ -1,5 +1,4 @@
-	
-function login(){	
+function login(){
 	$.ajax({
 		url : 'index/login',
 		type : "GET",

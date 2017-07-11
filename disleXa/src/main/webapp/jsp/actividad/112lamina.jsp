@@ -30,7 +30,6 @@
     </div>
 
   <ul class="pager">
-    <li class="previous"><a href="#">Anterior</a></li> 
     <li class="next"><a href="#" onClick="guardarResultado();">Siguiente</a></li>
   </ul>
  </div>
