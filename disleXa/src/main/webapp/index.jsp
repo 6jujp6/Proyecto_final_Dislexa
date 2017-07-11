@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,71 +8,79 @@
 <jsp:include page="/jsp/include_head.jsp" />
 </head>
 <body>
-	<header>
-		<jsp:include page="jsp/include_toolbar.jsp" />
-	</header>
+	<jsp:include page="jsp/include_toolbar.jsp" />
+	<!--Mask-->
+	<div class="view hm-light">
+		<div class="full-bg-img flex-center">
+			<div class="container" id="divContenido">
+				<div class="row" id="home">
 
-	<div id="divContenido" class="bs-example">
-		<div class="login">
-			<div class="arrow-up2"></div>
-			<div id="login" class="formholder"></div>
-		</div>
-		<div id="nuevo" class="nuevo">
-			<div id="myCarousel" class="carousel slide" data-ride="carousel">
-				<div class="transparente">
-					<div id="indexIzq">
-						<h1>¡Te ayudamos con tu rendimiento escolar!</h1>
-						<p>Dislexa es una aplicación cuya finalidad es ayudar con la
-							problemática de las DEA a través de actividades y juegos.</p>
-						<p>
-							<button type="button" class="btn btn-default">Saber más</button>
-						</p>
-					</div>
-					<div id="indexDer">
-						<h1>Registrarse</h1>
-						<label for="mail">Mail: </label> <input type="email" id="email"
-							class="form-control" title="No parece un formato de mail valido"
-							required> <label for="pass">Contraseña: </label> <input
-							type="password" id="pass" class="form-control"> <span>
-							Como:</span> <br> <a href="javascript:void(0);" id="login"
-							onclick="cargarActionContenido('paciente/menu','nuevo');">
-							<button type="button" class="btn btn-default">Instituto</button>
-						</a> <a href="javascript:void(0);" id="login"
-							onclick="cargarActionContenido('profesional/menu','nuevo');">
-							<button type="button" class="btn btn-default">Profesional</button>
-						</a> <br> <span> Activar usuario "Responsable" <a
-							href="javascript:void(0);" id="login"
-							onclick="cargarActionContenido('registro_login/activarResp','nuevo');">
-								Click aqui</a>
-						</span> <br>
-					</div>
-				</div>
+					<!--First column-->
+					<div class="col-lg-6" id="izquierda">
+						<!--Form-->
+						<div class="card wow fadeInLeft">
+							<div class="card-block">
+								<!--Header-->
+								<div class="text-center">
+									<h3>Registrate:</h3>
+									<hr>
+								</div>
 
-				<!-- 				Carousel indicators -->
-				<ol class="carousel-indicators">
-					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-					<li data-target="#myCarousel" data-slide-to="1"></li>
-					<li data-target="#myCarousel" data-slide-to="2"></li>
-				</ol>
-				<!-- 				Wrapper for carousel items -->
-				<div class="carousel-inner">
-					<div class="item active">
-						<img src="/disleXa/images/design/escribiendox.png" alt="First Slide"
-							class="slide">
+								<!--Body-->
+								<div class="md-form">
+									<i class="fa fa-user prefix"></i> <input type="text" id="form3"
+										class="form-control"> <label for="form3">Nombre</label>
+								</div>
+								<div class="md-form">
+									<i class="fa fa-envelope prefix"></i> <input type="text"
+										id="form2" class="form-control"> <label for="form2">Email</label>
+								</div>
+
+								<div class="md-form">
+									<i class="fa fa-lock prefix"></i> <input type="password"
+										id="form4" class="form-control"> <label for="form4">Contraseña</label>
+								</div>
+
+								<div class="text-center">
+									<label for="tipo">Como:</label> <a href="javascript:void(0);"
+										onclick="cargarActionContenido('registro_login/regInstituto','derecha');"
+										class="btn btn-primary btn-lg waves-effect waves-light">Institusion</a>
+									<a href="javascript:void(0);"
+										onclick="cargarActionContenido('registro_login/regProfesional','derecha');"
+										class="btn btn-pink btn-lg waves-effect waves-light">Profesional</a>
+									<hr>
+									<label for="checkbox1">Activar cuenta "Responsable" <a
+										href="javascript:void(0);"
+										onclick="cargarActionContenido('registro_login/activarResp','derecha');">Click
+											Aqui</a></label>
+								</div>
+
+							</div>
+						</div>
+						<!--/.Form-->
 					</div>
-					<div class="item">
-						<img src="/disleXa/images/design/escribiendox.png" alt="Second Slide">
+					<!--/.First column-->
+
+					<!--Second column-->
+					<div class="col-lg-6" id="derecha">
+						<div class="description">
+							<h2 class="h2-responsive wow fadeInRight">Te ayudamos con tu
+								rendimiento Escolar!</h2>
+							<hr class="hr-light wow fadeInRight">
+							<p class="wow fadeInRight" data-wow-delay="0.4s">Dislexa es
+								una aplicación cuya finalidad es ayudar con la problemática de
+								las DEA a través de actividades y juegos.</p>
+							<br> <a class="btn btn-outline-white btn-rg wow fadeInRight"
+								data-wow-delay="0.7s">Learn more</a>
+						</div>
 					</div>
-					<div class="item">
-						<img src="/disleXa/images/design/escribiendox.png" alt="Third Slide">
-					</div>
+					<!--/.Second column-->
 				</div>
 			</div>
-
 		</div>
 	</div>
+	<!--/.Mask-->
 
-<%-- 	<jsp:include page="jsp/include_footer.jsp" /> --%>
 
 	<jsp:include page="jsp/include_js.jsp" />
 </body>

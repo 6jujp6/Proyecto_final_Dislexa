@@ -1,21 +1,23 @@
-<div class="jumbotron">
-	<div class="row">
-		<div class="container">
-			<div class="row">
-				<label for="nombre">Registro Instituto: </label>
-			</div>
-			<div class="row">
-				<label for="nombre">Nombre de Institutcion: </label> <input
-					type="text" class="form-control" id="nombre">
-			</div>
-			<br>
-			<div class="row">
-				<a href="/disleXa">
-					<button type="button" class="btn btn-default">Atras</button>
-				</a>
-				<button type="button" class="btn btn-default pull-right">Guardar</button>
-			</div>
+
+<div class="card wow fadeInLeft">
+	<div class="card-block">
+		<div class="text-Left">
+			<h3>Institucion:</h3>
 		</div>
+		<!--Body-->
+		<div class="md-form">
+			<input type="text" id="form3" class="form-control"> <label
+				for="form3">Direccion</label>
+		</div>
+		<div class="md-form">
+			<input type="text" id="form2" class="form-control"> <label
+				for="form2">Telefono</label>
+		</div>
+
+		<div class="text-center">
+			<button class="btn btn-purple btn-lg waves-effect waves-light">Registrarse</button>
+
+		</div>
+
 	</div>
 </div>
-<br>

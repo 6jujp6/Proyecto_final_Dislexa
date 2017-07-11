@@ -46,6 +46,7 @@
 		</action>
 		<action name="mensaje" class="ar.edu.unlam.integrador.web.action.PacienteAction" method="mensaje">
 			<result name="SUCCESS">/jsp/paciente/mensaje.jsp</result>
+<<<<<<< HEAD
 		</action>
 <!-- 		<action name="buscarActividades" class="ar.edu.unlam.integrador.action.PacienteAction" method="buscarActividades"> -->
 <!-- 			<result name="SUCCESS">/jsp/actividad/112laminaf.jsp</result> -->
@@ -57,6 +58,16 @@
 			<result name="112lamina">/jsp/actividad/112lamina.jsp</result>
 			<result name="111libre">/jsp/actividad/111libre.jsp</result>
 			<result name="FIN_EVALUACION">/jsp/actividad/fin_evaluacion.jsp</result>
+=======
+
+		</action>		
+
+		<action name="111libre" class="ar.edu.unlam.integrador.web.action.PacienteAction">
+			<result name="SUCCESS">/jsp/actividad/111libre.jsp</result>
+		</action>
+		<action name="111libre" class="ar.edu.unlam.integrador.web.action.PacienteAction">
+			<result name="SUCCESS">/jsp/actividad/112lamina.jsp</result>
+>>>>>>> cdab3f2511237b4372f06246c34069a9a56b8c19
 		</action>
 	</package>
 	<package name="profesional" namespace="/profesional" extends="default">
@@ -72,39 +83,39 @@
 		<action name="mensajes" class="ar.edu.unlam.integrador.web.action.ProfesionalAction">
 			<result name="SUCCESS">/jsp/profesional/mensajes.jsp</result>
 		</action>
-		<action name="msj_responsable" class="ar.edu.unlam.integrador.action.ProfesionalAction">
+		<action name="msj_responsable" class="ar.edu.unlam.integrador.web.action.ProfesionalAction">
 			<result name="SUCCESS">/jsp/profesional/msj_responsable.jsp</result>
 		</action>
-		<action name="msj_paciente" class="ar.edu.unlam.integrador.action.ProfesionalAction">
+		<action name="msj_paciente" class="ar.edu.unlam.integrador.web.action.ProfesionalAction">
 			<result name="SUCCESS">/jsp/profesional/msj_paciente.jsp</result>
 		</action>
 	</package>
 	<package name="registro_login" namespace="/registro_login"
 		extends="default">
-		<action name="registrarse" class="ar.edu.unlam.integrador.action.RegistrarseAction">
+		<action name="registrarse" class="ar.edu.unlam.integrador.web.action.RegistrarseAction">
 			<result name="SUCCESS">/jsp/registro_login/registrarse.jsp</result>
 		</action>
-		<action name="login" class="ar.edu.unlam.integrador.action.RegistrarseAction">
+		<action name="login" class="ar.edu.unlam.integrador.web.action.RegistrarseAction">
 			<result name="SUCCESS">/jsp/registro_login/login.jsp</result>
 		</action>
-		<action name="regProfesional" class="ar.edu.unlam.integrador.action.RegistrarseAction">
+		<action name="regProfesional" class="ar.edu.unlam.integrador.web.action.RegistrarseAction">
 			<result name="SUCCESS">/jsp/registro_login/reg_profesional.jsp</result>
 		</action>
-		<action name="regInstituto" class="ar.edu.unlam.integrador.action.RegistrarseAction">
+		<action name="regInstituto" class="ar.edu.unlam.integrador.web.action.RegistrarseAction">
 			<result name="SUCCESS">/jsp/registro_login/reg_instituto.jsp</result>
 		</action>
-		<action name="activarResp" class="ar.edu.unlam.integrador.action.RegistrarseAction">
+		<action name="activarResp" class="ar.edu.unlam.integrador.web.action.RegistrarseAction">
 			<result name="SUCCESS">/jsp/registro_login/activar_resp.jsp</result>
 		</action>
 	</package>
 	<package name="responsable" namespace="/responsable" extends="default">
-		<action name="menu" class="ar.edu.unlam.integrador.action.ResponsableAction">
+		<action name="menu" class="ar.edu.unlam.integrador.web.action.ResponsableAction">
 			<result name="SUCCESS">/jsp/responsable/responsable.jsp</result>
 		</action>
-		<action name="datosPersonales" class="ar.edu.unlam.integrador.action.ResponsableAction">
+		<action name="datosPersonales" class="ar.edu.unlam.integrador.web.action.ResponsableAction">
 			<result name="SUCCESS">/jsp/responsable/datos_personales.jsp</result>
 		</action>
-		<action name="mensaje" class="ar.edu.unlam.integrador.action.ResponsableAction">
+		<action name="mensaje" class="ar.edu.unlam.integrador.web.action.ResponsableAction">
 			<result name="SUCCESS">/jsp/responsable/mensaje.jsp</result>
 		</action>
 	</package>
