@@ -5,7 +5,8 @@
 	  			<div class="panel-body">
 	  				<ul class="nav nav-pills nav-stacked">
 					  <li class="active"><a href="#">Bienvenido + Nombre Paciente</a></li>
-					  <li><a href="javascript:void(0);" onclick="cargarActionContenido('paciente/111libre', 'divContenidoPaciente');"><span class="glyphicon glyphicon-pencil"></span> Actividades</a></li>
+					  <!-- <li><a href="javascript:void(0);" onclick="cargarActionContenido('paciente/actividades', 'divContenidoPaciente');"><span class="glyphicon glyphicon-pencil"></span> Actividades</a></li> -->
+					  <li><a href="javascript:void(0);" onclick="buscarActividades();"><span class="glyphicon glyphicon-pencil"></span> Actividades</a></li>
 					  <li><a href="javascript:void(0);" onclick="cargarActionContenido('paciente/datosPersonales', 'divContenidoPaciente');"><span class="glyphicon glyphicon-cog"></span> Datos personales</a></li>
 					  <li><a href="javascript:void(0);" onclick="cargarActionContenido('paciente/mensaje', 'divContenidoPaciente');"><span class="glyphicon glyphicon-envelope"></span> Mensaje</a></li>
 					</ul>
@@ -23,3 +24,19 @@
 		</div>
 	</div>
 </div>
+
+<script>
+	function buscarActividades(){
+		$.ajax({
+			url : 'paciente/actividades',
+			type : "GET",
+			contentType : false,
+			success: function (data) {
+				cargarHTMLContenido(data,'divContenidoPaciente');
+			},
+			error: function (xhr, ajaxOptions, thrownError) {
+				alert("error al cargar actividades");
+			}
+		});
+	}
+</script>

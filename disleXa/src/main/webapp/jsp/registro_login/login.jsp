@@ -18,9 +18,9 @@
 <script>
 	$.getScript("/disleXa/js/login.js");
 	
-	function cargarHTMLContenido(html){
+	function cargarHTMLContenido(html, div){
 		setTimeout(function () {
-			$('#divContenido').html(html);
+			$("#" + div).html(html);
 		}, 500);
 	}
 </script>

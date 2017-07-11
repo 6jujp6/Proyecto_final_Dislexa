@@ -1,6 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
   <div class="container">
-    
-     
+  <s:hidden name="idEjecEvalActiv" id="idEjecEvalActiv" />
+  <s:hidden name="idEjecEval" id="idEjecEval" />
     <h4 id="text" class="text-jutify">Escribe sobre lo que quieras sobre esta figura
        <input class="btn btn-info" onclick="responsiveVoice.speak(document.getElementById('text').innerText, 'Spanish Female');" type="button" value="Leer"  />
     </h4>
@@ -11,8 +16,8 @@
     <br>
     
       <div class="form-group">
-        <label for="comment">Escribe aquí:</label>
-        <textarea class="form-control" rows="5" id="comment"></textarea>
+        <label for="comment">Escribe aquÃ­:</label>
+        <textarea class="form-control" rows="5" id="texto" name="texto"></textarea>
       </div>
     
     <br>
@@ -26,6 +31,10 @@
 
   <ul class="pager">
     <li class="previous"><a href="#">Anterior</a></li> 
-    <li class="next"><a href="#">Siguiente</a></li>
+    <li class="next"><a href="#" onClick="guardarResultado();">Siguiente</a></li>
   </ul>
  </div>
+ 
+ <script>
+	$.getScript("/disleXa/js/actividades.js");
+</script>

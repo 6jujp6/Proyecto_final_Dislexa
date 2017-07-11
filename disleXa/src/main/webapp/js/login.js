@@ -39,7 +39,7 @@ function login(){
 		},		
 		contentType : false,
 		success: function (data) {
-			cargarHTMLContenido(data);
+			cargarHTMLContenido(data, 'divContenido');
 		},
 		error: function (xhr, ajaxOptions, thrownError) {
 			alert("error falta mostrar usuario incorrecto");

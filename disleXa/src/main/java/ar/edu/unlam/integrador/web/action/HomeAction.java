@@ -1,6 +1,13 @@
 package ar.edu.unlam.integrador.web.action;
 
-import ar.edu.unlam.integrador.entities.Institucion;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
+import ar.edu.unlam.integrador.entities.Actividad;
+import ar.edu.unlam.integrador.entities.EjecucionEvaluacion;
+import ar.edu.unlam.integrador.entities.EjecucionEvaluacionActividad;
+import ar.edu.unlam.integrador.entities.Evaluacion;
 import ar.edu.unlam.integrador.entities.TipoUsuario;
 import ar.edu.unlam.integrador.entities.Usuario;
 import ar.edu.unlam.integrador.service.FactoryService;
@@ -16,19 +23,13 @@ public class HomeAction extends BaseAction {
 	
 	public String login(){		
 		FactoryService factory = getFactoryService();
-		
-		//TODO OBTENER LOS DATOS DEL FORM, SACAR HARDCODE		
-		//Usuario usuario = factory.getUsuarioService().buscarPorLogin("info@escuela7.com","123");
+	
 		Usuario usuario = factory.getUsuarioService().buscarPorLogin(email,pass);
-		Institucion ins= null;
 		if (usuario==null)
 			return "ERROR"; //NO EXISTE USUARIO		
 		else{
 			session.put("usuario", usuario);
 			
-//			if (session.containsKey("usuario"))
-//			   ins=(Institucion)session.get("usuario");
-//			
 			TipoUsuario tipo = TipoUsuario.obtenerPorTipoObjeto(usuario.getClass());
 			switch(tipo){
 				case ALUMNO_PACIENTE:

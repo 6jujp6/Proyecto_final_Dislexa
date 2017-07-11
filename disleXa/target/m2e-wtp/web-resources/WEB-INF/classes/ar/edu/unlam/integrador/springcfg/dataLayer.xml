@@ -22,4 +22,12 @@
 	</bean>
 	<bean id="cursoDao" class="ar.edu.unlam.integrador.dao.CursoDao" parent="DAOTemplate">
 	</bean>
+	<bean id="actividadDao" class="ar.edu.unlam.integrador.dao.ActividadDao" parent="DAOTemplate">
+	</bean>
+	<bean id="evaluacionDao" class="ar.edu.unlam.integrador.dao.EvaluacionDao" parent="DAOTemplate">
+	</bean>
+	<bean id="ejecucionEvaluacionDao" class="ar.edu.unlam.integrador.dao.EjecucionEvaluacionDao" parent="DAOTemplate">
+	</bean>
+	<bean id="ejecucionEvaluacionActividadDao" class="ar.edu.unlam.integrador.dao.EjecucionEvaluacionActividadDao" parent="DAOTemplate">
+	</bean>
 </beans>

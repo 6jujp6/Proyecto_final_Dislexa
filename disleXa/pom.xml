@@ -17,6 +17,7 @@
 			<hibernate.version>4.2.21.Final</hibernate.version>
 			<jboss-logging.version>3.2.1.Final</jboss-logging.version>
 			<ehcache.version>2.6.9</ehcache.version>
+			<jstl.version>1.2</jstl.version>
 	</properties>
  	<url>http://maven.apache.org</url>
 	<dependencyManagement>
@@ -117,7 +118,13 @@
 			<groupId>org.jboss.logging</groupId>
 			<artifactId>jboss-logging</artifactId>
 			<version>${jboss-logging.version}</version>
-		</dependency>	 
+		</dependency>	
+		<!-- PARA EL JSP -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>${jstl.version}</version>
+		</dependency> 
 	</dependencies>
   <build>
    <finalName>disleXa</finalName>

@@ -38,22 +38,25 @@
 		<action name="menu" class="ar.edu.unlam.integrador.web.action.PacienteAction" method="menu">
 			<result name="SUCCESS">/jsp/paciente/paciente.jsp</result>
 		</action>
-		<action name="actividades" class="ar.edu.unlam.integrador.web.action.PacienteAction" method="actividades">
-			<result name="SUCCESS">/jsp/paciente/actividades.jsp</result>
+		<action name="actividades" class="ar.edu.unlam.integrador.web.action.AlumnoAction" method="buscarActividades">
+			<result name="success">/jsp/paciente/actividades.jsp</result>
 		</action>
 		<action name="datosPersonales" class="ar.edu.unlam.integrador.web.action.PacienteAction" method="datosPersonales">
 			<result name="SUCCESS">/jsp/paciente/datos_personales.jsp</result>
 		</action>
 		<action name="mensaje" class="ar.edu.unlam.integrador.web.action.PacienteAction" method="mensaje">
 			<result name="SUCCESS">/jsp/paciente/mensaje.jsp</result>
-
-		</action>		
-
-		<action name="111libre" class="ar.edu.unlam.integrador.action.PacienteAction">
-			<result name="SUCCESS">/jsp/actividad/111libre.jsp</result>
 		</action>
+<!-- 		<action name="buscarActividades" class="ar.edu.unlam.integrador.action.PacienteAction" method="buscarActividades"> -->
+<!-- 			<result name="SUCCESS">/jsp/actividad/112laminaf.jsp</result> -->
+<!-- 		</action> -->
 		<action name="111libre" class="ar.edu.unlam.integrador.action.PacienteAction">
-			<result name="SUCCESS">/jsp/actividad/112lamina.jsp</result>
+			<result name="SUCCESS">/jsp/actividad/113objetos.jsp</result>
+		</action>
+		<action name="guardarResultado" class="ar.edu.unlam.integrador.web.action.AlumnoAction" method="guardarResultado">
+			<result name="112lamina">/jsp/actividad/112lamina.jsp</result>
+			<result name="111libre">/jsp/actividad/111libre.jsp</result>
+			<result name="FIN_EVALUACION">/jsp/actividad/fin_evaluacion.jsp</result>
 		</action>
 	</package>
 	<package name="profesional" namespace="/profesional" extends="default">
