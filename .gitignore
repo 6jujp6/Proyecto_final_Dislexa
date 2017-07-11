@@ -2,3 +2,4 @@ disleXa/.gitignore
 Thumbs.db
 disleXa/src/main/webapp/images/design/background.psd
 disleXa/JavaAppsConfig/ar/edu/unlam/integrador/springcfg/jdbc.properties
+disleXa/src/main/webapp/img/design/background.psd
