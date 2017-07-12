@@ -1,6 +1,5 @@
 <div class="container">
 
-
 	<h4 id="text" class="text-jutify">
 		Copia esta oración: <a href="#" class="btn btn-info"
 			onclick="responsiveVoice.speak(document.getElementById('text').innerText, 'Spanish Female');"><i
@@ -11,9 +10,9 @@
 		BOSQUE</H3>
 	<BR>
 	<form>
-		<div class="form-group">
+		<div class="md-form">
 			<label for="comment">Escribe aquí:</label>
-			<textarea class="form-control" rows="1" id="comment"></textarea>
+			<textarea class="md-textarea" rows="1" id="comment"></textarea>
 		</div>
 	</form>
 <!-- 	<br> <label for="comment">Avance:</label> -->
