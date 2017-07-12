@@ -10,7 +10,7 @@
 		<div class="alert alert-success" role="alert">
 			Tenés una nueva actividad para realizar!
 			<s:hidden name="idEjecEval" id="idEjecEval" />
-			<a href="#" class="alert-link" onClick="empezar();">Empezar</a>
+			<a href="#" class="btn btn-success" onClick="empezar();">Empezar</a>
 		</div>
 	</c:if>
 </c:if>

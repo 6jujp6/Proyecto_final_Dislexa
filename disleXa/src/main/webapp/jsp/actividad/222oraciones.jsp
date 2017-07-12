@@ -10,13 +10,13 @@
 
 	<h4 id="text" class="text-jutify">
 		Aca hay algunas oraciones escritas debajo de las imágenes. Te pido que
-		las leas en voz alta.<a href="#" class="btn btn-info"
+		las leas en voz alta:<a href="#" class="btn btn-info"
 			onclick="responsiveVoice.speak(document.getElementById('text').innerText, 'Spanish Female');"><i
 			class="fa fa-microphone" aria-hidden="true"></i></a>
 	</h4>
 	<p>
 		<span id="text1">Para empezar toca el botón rojo y para
-			finalizar toca el verde. <a href="#" class="btn btn-info"
+			finalizar toca el verde <a href="#" class="btn btn-info"
 			onclick="responsiveVoice.speak(document.getElementById('text1').innerText, 'Spanish Female');"><i
 			class="fa fa-microphone" aria-hidden="true"></i></a></span>
 	</p>
