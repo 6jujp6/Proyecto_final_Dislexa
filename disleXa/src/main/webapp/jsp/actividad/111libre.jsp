@@ -31,3 +31,6 @@
     <li class="next"><a href="#" onClick="guardarResultado();">Siguiente</a></li>
   </ul>
  </div>
+  <script>
+	$.getScript("/disleXa/js/actividades.js");
+</script>

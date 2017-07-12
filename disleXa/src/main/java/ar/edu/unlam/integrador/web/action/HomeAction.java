@@ -18,7 +18,8 @@ public class HomeAction extends BaseAction {
 	private static final long serialVersionUID = 1L;
 	private String email, pass;
 	
-	public HomeAction(){		
+	public HomeAction(){
+		
 	}
 	
 	public String login(){		

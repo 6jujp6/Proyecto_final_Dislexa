@@ -58,14 +58,7 @@
     <br>
     <br>
     
-    <br>
-    <label for="comment">Avance:</label>
-    <div class="progress">          
-      <div class="progress-bar" role="progressbar" aria-valuenow="70"
-          aria-valuemin="0" aria-valuemax="100" style="width:00%">
-        0%
-      </div>
-    </div>
+<textarea class="form-control" rows="5" id="texto" name="texto" style="display:none;"></textarea>
 
   <ul class="pager">
     <!-- <li class="previous"><a href="#">Previous</a></li> -->
@@ -78,4 +71,8 @@
   <script src="/disleXa/js/Fr.voice.js"></script>
   <script src="/disleXa/js/jquery.js"></script>
   <script src="/disleXa/js/app.js"></script>
+  
+   <script>
+	$.getScript("/disleXa/js/actividades.js");
+</script>
    
