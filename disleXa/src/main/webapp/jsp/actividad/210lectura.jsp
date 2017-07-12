@@ -27,7 +27,7 @@
       <div class="row">
         <div class="col-md-4">
           <p>¿Qué te acordás de lo que te conté?</p>
-          <input class="btn btn-info" onclick="responsiveVoice.speak('¿Qué te acordás de lo que te conté?', 'Spanish Latin American Female');" type="button" value="Leer"  />               
+          <input class="btn btn-info" onclick="responsiveVoice.speak('¿Qué te acordás de lo que te conté?', 'Spanish Latin American Female');" type="button" value="Leer" id="texto" name="texto" />               
         </div>
         <div class="col-md-4">
             <p>¿Qué le pasó a Mariela?</p>
@@ -84,4 +84,8 @@
   <script src="/disleXa/js/Fr.voice.js"></script>
   <script src="/disleXa/js/jquery.js"></script>
   <script src="/disleXa/js/app.js"></script>
+  
+   <script>
+	$.getScript("/disleXa/js/actividades.js");
+</script>
    

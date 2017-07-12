@@ -62,6 +62,10 @@
 		<action name="guardarResultado" class="ar.edu.unlam.integrador.web.action.AlumnoAction" method="guardarResultado">
 			<result name="112lamina">/jsp/actividad/112lamina.jsp</result>
 			<result name="111libre">/jsp/actividad/111libre.jsp</result>
+			<result name="221palabra">/jsp/actividad/221palabra.jsp</result>		
+			<result name="210lectura">/jsp/actividad/210lectura.jsp</result>	
+			<result name="222oraciones">/jsp/actividad/222oraciones.jsp</result>
+			<result name="113objetos">/jsp/actividad/113objetos.jsp</result>
 			<result name="FIN_EVALUACION">/jsp/actividad/fin_evaluacion.jsp</result>
 		</action>		
 

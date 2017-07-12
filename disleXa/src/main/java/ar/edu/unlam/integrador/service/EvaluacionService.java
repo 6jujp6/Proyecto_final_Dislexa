@@ -29,4 +29,9 @@ public class EvaluacionService extends BaseService {
 	public Evaluacion obtenerPorId(int id) {
 		return getEvaluacionDao().obtenerPorId(id);
 	}
+
+	public void actualizarEvaluacion(Evaluacion evaluacion) {
+		getEvaluacionDao().modificarEvaluacion(evaluacion);
+		
+	}
 }
