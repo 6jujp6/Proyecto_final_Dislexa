@@ -3,3 +3,4 @@ Thumbs.db
 disleXa/src/main/webapp/images/design/background.psd
 disleXa/JavaAppsConfig/ar/edu/unlam/integrador/springcfg/jdbc.properties
 disleXa/src/main/webapp/img/design/background.psd
+disleXa/target/m2e-wtp/web-resources/WEB-INF/classes/ar/edu/unlam/integrador/springcfg/jdbc.properties

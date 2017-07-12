@@ -14,16 +14,10 @@ import ar.edu.unlam.integrador.entities.Institucion;
 
 public class CursoDao extends BaseDao<Curso>{
 	
-    public Curso obtenerCurso(){
-        Session s = getSessionFactory().getCurrentSession();
-        Criteria criteria = s.createCriteria(Curso.class, "CURSO");
-  
-        //TODO busca 1 siempre, pasar por parametros
-        Criterion r1 = Restrictions.eq("CURSO.idCurso", 1);
-        criteria.add(r1);
-        
-        Curso res = (Curso) criteria.uniqueResult();
-        return res;
+    public Curso obtenerCursoPorId(int id){
+    	Session s = getSessionFactory().getCurrentSession();
+		Curso curso = (Curso) s.get(Curso.class, id);
+		return curso;	
     }
     
     @SuppressWarnings("unchecked")

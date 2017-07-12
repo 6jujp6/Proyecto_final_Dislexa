@@ -69,9 +69,6 @@
 			<!--First row-->
 			<div class="row wow fadeIn" data-wow-delay="0.4s">
 				<div class="col-lg-12">
-					<!--                             <div class="divider-new"> -->
-					<!--                                 <h2 class="h2-responsive">What's new?</h2> -->
-					<!--                             </div> -->
 
 					<div id="divContenidoPaciente" class="jumbotron"></div>
 				</div>
@@ -183,6 +180,9 @@
 </div>
 <!--/.Main layout--> </main>
 
+<jsp:include page="../include_footer.jsp" />
+
+<jsp:include page="../include_js.jsp" />
 
 <script>
 	function buscarActividades(){
@@ -199,7 +199,3 @@
 		});
 	}
 </script>
-
-<jsp:include page="../include_footer.jsp" />
-
-<jsp:include page="../include_js.jsp" />

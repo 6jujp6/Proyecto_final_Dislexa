@@ -21,6 +21,7 @@ public class AlumnoAction extends BaseAction{
 	private String nombre;
 	private String apellido;
 	private Long dni;
+	private int idCurso;
 	private boolean esAlumno;
 	private EjecucionEvaluacion ejecucionEvaluacion = new EjecucionEvaluacion();
 	private int idEjecEvalActiv;
@@ -38,8 +39,9 @@ public class AlumnoAction extends BaseAction{
 			institucion=(Institucion)session.get("usuario");
 		 
 		List<Curso> cursos = factory.getCursoService().buscarCursosPorInstitucion(institucion);
+		Curso cursoSel = factory.getCursoService().obtenerCurso(idCurso);
 		
-		List<AlumnoPaciente> lista = factory.getAlumnoPacienteService().buscarAlumnoPaciente(nombre, apellido,dni, cursos);
+		List<AlumnoPaciente> lista = factory.getAlumnoPacienteService().buscarAlumnoPaciente(nombre, apellido,dni, cursos,cursoSel);
 		setListaAlumnoResultado(lista);
 		
 		return SUCCESS;
@@ -179,5 +181,13 @@ public class AlumnoAction extends BaseAction{
 
 	public void setIdEjecEval(int idEjecEval) {
 		this.idEjecEval = idEjecEval;
+	}
+
+	public int getIdCurso() {
+		return idCurso;
+	}
+
+	public void setIdCurso(int idCurso) {
+		this.idCurso = idCurso;
 	}		
 }

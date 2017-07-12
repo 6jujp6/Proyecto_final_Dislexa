@@ -12,13 +12,13 @@
 			<i class="fa fa-envelope prefix"></i>
 			<s:textfield type="email" class="form-control" name="email"
 				placeholder="mail@ejemplo.com" id="email"
-				title="No parece un formato de mail valido" />
+				title="No parece un formato de mail valido"/>
 		</div>
 
 		<div class="md-form">
 			<i class="fa fa-lock prefix"></i>
 			<s:textfield type="password" class="form-control" name="password"
-				placeholder="Contraseña" id="pass" />
+				placeholder="Contraseña" id="pass"/>
 		</div>
 
 		<div class="text-center">
@@ -38,6 +38,12 @@
 	$.getScript("/disleXa/js/login.js");
 	
 	function cargarHTMLContenido(html, div){
-		setTimeout(function () {
-			$('body').html(html);})}
+		if(div=='body')
+			setTimeout(function () {
+				$('body').html(html);})
+		else
+			setTimeout(function () {
+				$("#" + div).html(html);
+			}, 500);
+	}
 </script>
