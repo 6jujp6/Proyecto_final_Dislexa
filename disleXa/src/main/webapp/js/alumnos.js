@@ -29,10 +29,10 @@ function setearGrillaAlumnos(){
 			}
 			, {
 				name : 'curso.nombre',
-				width : 200
+				width : 100
 			}
 			],
-			height : '250' ,
+			height : 'auto' ,
 			width: null ,
 			shrinkToFit: false ,
 			loadui : 'block' ,
