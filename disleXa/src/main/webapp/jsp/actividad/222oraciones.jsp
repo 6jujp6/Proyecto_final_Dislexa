@@ -57,7 +57,7 @@
 
 
 	</div>
-
+	<textarea class="form-control" rows="5" id="texto" name="texto" style="display:none;"></textarea>
 	<div class="md-form">
 <!-- 		<label for="comment">Escribe aquí:</label> -->
 <!-- 		<textarea class="md-textarea" rows="3" id="texto" name="texto"></textarea> -->

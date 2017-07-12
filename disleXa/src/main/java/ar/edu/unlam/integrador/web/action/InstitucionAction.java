@@ -15,8 +15,8 @@ public class InstitucionAction extends BaseAction {
 	private List<Curso> cursos = null;
 	
 
-	public String InstitucionAction(){
-		return "SUCCESS";
+	public InstitucionAction(){
+		
 	}
 	
 	public String misAlumnos(){

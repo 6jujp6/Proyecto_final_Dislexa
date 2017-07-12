@@ -19,7 +19,7 @@
 		<div class="col-md-10">
 			<div class="form-group">
 				<label for="comment">Escribe aquí:</label>
-				<textarea class="form-control" rows="2" id="comment"></textarea>
+				<textarea class="form-control" rows="2" id="texto" name="texto"></textarea>
 			</div>
 		</div>
 	</div>
