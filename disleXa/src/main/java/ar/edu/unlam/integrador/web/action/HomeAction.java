@@ -5,9 +5,11 @@ import java.util.Iterator;
 import java.util.Set;
 
 import ar.edu.unlam.integrador.entities.Actividad;
+import ar.edu.unlam.integrador.entities.AlumnoPaciente;
 import ar.edu.unlam.integrador.entities.EjecucionEvaluacion;
 import ar.edu.unlam.integrador.entities.EjecucionEvaluacionActividad;
 import ar.edu.unlam.integrador.entities.Evaluacion;
+import ar.edu.unlam.integrador.entities.Institucion;
 import ar.edu.unlam.integrador.entities.TipoUsuario;
 import ar.edu.unlam.integrador.entities.Usuario;
 import ar.edu.unlam.integrador.service.FactoryService;
@@ -17,6 +19,7 @@ public class HomeAction extends BaseAction {
 
 	private static final long serialVersionUID = 1L;
 	private String email, pass;
+	private String nombre;
 	
 	public HomeAction(){
 		
@@ -31,11 +34,22 @@ public class HomeAction extends BaseAction {
 		else{
 			session.put("usuario", usuario);
 			
+			
 			TipoUsuario tipo = TipoUsuario.obtenerPorTipoObjeto(usuario.getClass());
 			switch(tipo){
 				case ALUMNO_PACIENTE:
+					AlumnoPaciente alumnoPaciente= null;
+					if (session.containsKey("usuario")){
+						alumnoPaciente=(AlumnoPaciente)session.get("usuario");
+						setNombre(alumnoPaciente.getNombre());
+						}
 					return "ALUMNO_PACIENTE";
 				case INSTITUCION:
+					Institucion institucion = new Institucion();
+					if(session.containsKey("usuario")){
+						institucion = (Institucion) session.get("usuario");					
+						setNombre(institucion.getNombre());
+						}
 					return "INSTITUCION";
 				//TODO MAPEAR ENTIDAD PROFESIONAL Y RETORNAR RESULT TIPO "PROFESIONAL"	
 				default:
@@ -58,5 +72,13 @@ public class HomeAction extends BaseAction {
 
 	public void setPass(String pass) {
 		this.pass = pass;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}	
 }

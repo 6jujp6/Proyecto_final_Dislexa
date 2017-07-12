@@ -44,7 +44,7 @@
 								<div class="text-center">
 									<label for="tipo">Como:</label> <a href="javascript:void(0);"
 										onclick="cargarActionContenido('registro_login/regInstituto','derecha');"
-										class="btn btn-primary btn-lg waves-effect waves-light">Institusion</a>
+										class="btn btn-primary btn-lg waves-effect waves-light">Institucion</a>
 									<a href="javascript:void(0);"
 										onclick="cargarActionContenido('registro_login/regProfesional','derecha');"
 										class="btn btn-pink btn-lg waves-effect waves-light">Profesional</a>
@@ -71,7 +71,7 @@
 								una aplicación cuya finalidad es ayudar con la problemática de
 								las DEA a través de actividades y juegos.</p>
 							<br> <a class="btn btn-outline-white btn-rg wow fadeInRight"
-								data-wow-delay="0.7s">Learn more</a>
+								data-wow-delay="0.7s">LEER MAS</a>
 						</div>
 					</div>
 					<!--/.Second column-->

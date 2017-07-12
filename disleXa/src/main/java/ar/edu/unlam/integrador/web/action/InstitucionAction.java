@@ -43,5 +43,13 @@ public class InstitucionAction extends BaseAction {
 		
 		return SUCCESS;
 	}
+	
+	public String datosPersonales(){
+		return "SUCCESS";
+	}
+	
+	public String historico(){
+		return "SUCCESS";
+	}
 		
 }
