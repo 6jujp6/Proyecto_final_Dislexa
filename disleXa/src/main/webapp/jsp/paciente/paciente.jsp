@@ -21,26 +21,6 @@
 <main> <!--Main layout-->
 <div class="container">
 	<div class="row">
-<<<<<<< HEAD
-		<div class="col-md-3">
-			<div class="panel panel-default">
-	  			<div class="panel-body">
-	  				<ul class="nav nav-pills nav-stacked">
-					  <li class="active"><a href="#">Bienvenido + Nombre Paciente</a></li>
-					  <!-- <li><a href="javascript:void(0);" onclick="cargarActionContenido('paciente/actividades', 'divContenidoPaciente');"><span class="glyphicon glyphicon-pencil"></span> Actividades</a></li> -->
-					  <li><a href="javascript:void(0);" onclick="buscarActividades();"><span class="glyphicon glyphicon-pencil"></span> Actividades</a></li>
-					  <li><a href="javascript:void(0);" onclick="cargarActionContenido('paciente/datosPersonales', 'divContenidoPaciente');"><span class="glyphicon glyphicon-cog"></span> Datos personales</a></li>
-					  <li><a href="javascript:void(0);" onclick="cargarActionContenido('paciente/mensaje', 'divContenidoPaciente');"><span class="glyphicon glyphicon-envelope"></span> Mensaje</a></li>
-					</ul>
-	  			</div>
-			</div>			
-	   	</div>
-	   <div class="col-md-9">
-			<div class="panel panel-default">
-				<div class="container">
-		  			<div class="panel-body">
-						<div id="divContenidoPaciente"></div>
-=======
 
 		<!--Sidebar-->
 		<div class="col-lg-3 wow fadeIn" data-wow-delay="0.2s">
@@ -50,7 +30,7 @@
 
 					<a href="#" class="list-group-item active">Bienvenido + Nombre
 						Paciente</a> <a href="javascript:void(0);"
-						onclick="cargarActionContenido('paciente/111libre', 'divContenidoPaciente');"
+						onclick="buscarActividades();"
 						class="list-group-item"><span
 						class="glyphicon glyphicon-pencil"></span> Actividades</a><a
 						href="javascript:void(0);"
@@ -189,7 +169,6 @@
 						</div>
 						<!--/.Card content-->
 
->>>>>>> cdab3f2511237b4372f06246c34069a9a56b8c19
 					</div>
 					<!--/.Card-->
 				</div>
@@ -202,7 +181,8 @@
 
 	</div>
 </div>
-<<<<<<< HEAD
+<!--/.Main layout--> </main>
+
 
 <script>
 	function buscarActividades(){
@@ -219,10 +199,7 @@
 		});
 	}
 </script>
-=======
-<!--/.Main layout--> </main>
 
 <jsp:include page="../include_footer.jsp" />
 
 <jsp:include page="../include_js.jsp" />
->>>>>>> cdab3f2511237b4372f06246c34069a9a56b8c19
