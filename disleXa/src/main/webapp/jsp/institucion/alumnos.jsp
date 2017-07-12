@@ -35,7 +35,7 @@
 </div>
 <div class="row">
 	<div class="col-md-12">
-		<div class="table-responsive">
+		<div class="table">
 			<table class="table table-striped" id="grillaAlumnos"></table>
 		</div>
 	</div>

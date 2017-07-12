@@ -37,11 +37,16 @@ function setearGrillaAlumnos(){
 				width :150
 			}
 			, {
+<<<<<<< HEAD
 				name : 'estadoEvaluacion',
 				width :150
+=======
+				name : 'curso.nombre',
+				width : 100
+>>>>>>> 0113ba824bb7c124cc809d59af0419543004acb9
 			}
 			],
-			height : '250' ,
+			height : 'auto' ,
 			width: null ,
 			shrinkToFit: false ,
 			loadui : 'block' ,

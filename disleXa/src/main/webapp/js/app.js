@@ -13,16 +13,16 @@ button_rec();
 // var Apps = {  
   function button_rec(){
     // alert('button rec');
-    $('.type_buttons').html('<input type="button" class="content_button_rs" id="record" name=""></input>');
-    $('#record').val('REC');
+    $('.type_buttons').html('<input type="button" class="btn btn-danger" id="record" name=""></input>');
+    $('#record').val('Grabar');
     $('#record').on('click', function(){
       button_stop();
     });
   };
   function button_stop(){
-    $('.type_buttons').html('<input type="button" class="content_button_rs" id="download" name=""></input>');
-    $('.content_button_rs').css({'color':'#FFF','background':'#19922d'});
-    $('#download').val('STOP');
+    $('.type_buttons').html('<input type="button" class="btn btn-success" id="download" name=""></input>');
+//    $('.content_button_rs').css({'color':'#FFF','background':'#19922d'});
+    $('#download').val('Detener');
     $(document).on("click", "#rec_stop:not(.disabled)", function(){
       
       Fr.voice.record($("#live").is(":checked"), function(){

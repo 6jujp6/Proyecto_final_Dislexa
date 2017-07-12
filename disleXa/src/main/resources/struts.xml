@@ -21,10 +21,17 @@
 		<action name="misAlumnos" class="ar.edu.unlam.integrador.web.action.InstitucionAction" method="misAlumnos">
 			<result name="SUCCESS">/jsp/institucion/alumnos.jsp</result>
 		</action>
+<<<<<<< HEAD
 		<action name="datosPersonales" class="ar.edu.unlam.integrador.web.action.InstitucionAction" method="datosPersonales">
 			<result name="SUCCESS">/jsp/institucion/datos_personales.jsp</result>
 		</action>
 		<action name="historico" class="ar.edu.unlam.integrador.web.action.InstitucionAction" method="historico">
+=======
+		<action name="datosPersonales" class="ar.edu.unlam.integrador.web.action.InstitucionAction" method="InstitucionAction">
+			<result name="SUCCESS">/jsp/institucion/datos_personales.jsp</result>
+		</action>
+		<action name="historico" class="ar.edu.unlam.integrador.web.action.InstitucionAction" method="InstitucionAction">
+>>>>>>> 0113ba824bb7c124cc809d59af0419543004acb9
 			<result name="SUCCESS">/jsp/institucion/historico.jsp</result>
 		</action>
 		<action name="buscarAlumnos" class="ar.edu.unlam.integrador.web.action.AlumnoAction" method="buscarAlumnos">
