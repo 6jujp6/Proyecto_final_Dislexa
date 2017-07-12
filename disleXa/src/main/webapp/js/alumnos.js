@@ -10,26 +10,40 @@ function setearGrillaAlumnos(){
 				"idCurso" : $("#cboCurso").val()
 			},
 			colNames : [ 
+			            'Id',
 			            'Nombre',
 			           	'Apellido',
 			           	'Documento',
-			           	'Curso'
+			           	'Curso',
+			           	'Estado Eval.'
 			],
 			colModel : [
-			{
+			{	name : 'idAlumno',
+				key : true,
+				hidden : true
+			}, {
 				name : 'nombre',
 				key : true,
-				width : 200
+				width : 150
 			}, {
 				name : 'apellido',
-				width : 200
+				width : 150
 			}, {
 				name : 'dni',
-				width : 200
+				width : 150
 			}
 			, {
+				name : 'curso',
+				width :150
+			}
+			, {
+<<<<<<< HEAD
+				name : 'estadoEvaluacion',
+				width :150
+=======
 				name : 'curso.nombre',
 				width : 100
+>>>>>>> 0113ba824bb7c124cc809d59af0419543004acb9
 			}
 			],
 			height : 'auto' ,

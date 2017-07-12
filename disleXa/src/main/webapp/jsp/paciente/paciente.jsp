@@ -1,3 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
+
 <!--Navbar-->
 <nav class="navbar navbar-toggleable-md navbar-light">
 	<div class="container">
@@ -12,6 +18,12 @@
 		</a>
 		<div class="collapse navbar-collapse" id="navbarNav1">
 			<ul class="navbar-nav ml-auto">
+				<li><a href="/disleXa">
+						<button type="button"
+							class="
+						btn btn-outline-black waves-effect waves-light">
+							Salir</button>
+				</a></li>
 			</ul>
 		</div>
 	</div>
@@ -28,8 +40,7 @@
 			<div class="widget-wrapper">
 				<div class="list-group">
 
-					<a href="#" class="list-group-item active">Bienvenido + Nombre
-						Paciente</a> <a href="javascript:void(0);"
+					<a href="#" class="list-group-item active">Bienvenido/a <s:text name="nombre"></s:text>!</a> <a href="javascript:void(0);"
 						onclick="buscarActividades();"
 						class="list-group-item"><span
 						class="glyphicon glyphicon-pencil"></span> Actividades</a><a
@@ -40,7 +51,6 @@
 						onclick="cargarActionContenido('paciente/mensaje', 'divContenidoPaciente');"
 						class="list-group-item"><span
 						class="glyphicon glyphicon-envelope"></span> Mensaje</a>
-
 				</div>
 			</div>
 

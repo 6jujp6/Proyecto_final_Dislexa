@@ -1,5 +1,6 @@
 package ar.edu.unlam.integrador.web.action;
 
+import ar.edu.unlam.integrador.entities.AlumnoPaciente;
 import ar.edu.unlam.integrador.web.base.BaseAction;
 
 public class PacienteAction extends BaseAction {
@@ -12,11 +13,8 @@ public class PacienteAction extends BaseAction {
 	public PacienteAction(){
 	}
 	
-	public String menu(){		
-//	FactoryService factory = getFactoryService();
-//	//ArchivoAceptadosDto dto = factory.getArchivosAceptadosService().agregarArchivo(getFormularioArchivo());
-//	Usuario usuario = factory.getUsuarioService().obtenerUsuario();	
-	return "SUCCESS";
+	public String meenu(){		
+		return "SUCCESS";
 	}
 	
 	public String datosPersonales(){
@@ -29,5 +27,5 @@ public class PacienteAction extends BaseAction {
 	
 	public String actividades(){
 		return "SUCCESS";
-	}
+	}	
 }

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import ar.edu.unlam.integrador.entities.AlumnoEvaluacion;
 import ar.edu.unlam.integrador.entities.AlumnoPaciente;
 import ar.edu.unlam.integrador.entities.Curso;
 import ar.edu.unlam.integrador.entities.EjecucionEvaluacion;
@@ -16,7 +17,8 @@ import ar.edu.unlam.integrador.service.FactoryService;
 public class AlumnoAction extends BaseAction{
 
 	private static final long serialVersionUID = 1L;
-	private List<AlumnoPaciente> alumnos = null;
+	//private List<AlumnoPaciente> alumnos = null;
+	private List<AlumnoEvaluacion> alumnos = null;
 	
 	private String nombre;
 	private String apellido;
@@ -41,9 +43,28 @@ public class AlumnoAction extends BaseAction{
 		List<Curso> cursos = factory.getCursoService().buscarCursosPorInstitucion(institucion);
 		Curso cursoSel = factory.getCursoService().obtenerCurso(idCurso);
 		
-		List<AlumnoPaciente> lista = factory.getAlumnoPacienteService().buscarAlumnoPaciente(nombre, apellido,dni, cursos,cursoSel);
-		setListaAlumnoResultado(lista);
+		List<AlumnoPaciente> listaAlumnos = factory.getAlumnoPacienteService().buscarAlumnoPaciente(nombre, apellido,dni, cursos,cursoSel);
+		List<AlumnoEvaluacion> listaAlumnoEval = new ArrayList<AlumnoEvaluacion>();
 		
+		for(AlumnoPaciente alumno : listaAlumnos){
+			AlumnoEvaluacion alumnoEval = new AlumnoEvaluacion();
+			alumnoEval.setIdAlumno(alumno.getIdUsuario());
+			alumnoEval.setNombre(alumno.getNombre());
+			alumnoEval.setApellido(alumno.getApellido());
+			alumnoEval.setCurso(alumno.getCurso().getNombre());
+			alumnoEval.setDni(alumno.getDni());
+			
+			ejecucionEvaluacion = factory.getEjecucionEvaluacionService().obtenerPorAlumno(alumno);
+			if(ejecucionEvaluacion==null)
+				alumnoEval.setEstadoEvaluacion("NO ASIGNADO");
+			else if(ejecucionEvaluacion.getPendienteDiagnostico())
+				alumnoEval.setEstadoEvaluacion("PENDIENTE DE DIAGNOSTICO");
+				else
+					alumnoEval.setEstadoEvaluacion("PENDIENTE DE RESOLUCION");
+			listaAlumnoEval.add(alumnoEval);
+			}
+		
+		setListaAlumnoResultado(listaAlumnoEval);
 		return SUCCESS;
 	}
 	
@@ -112,10 +133,10 @@ public class AlumnoAction extends BaseAction{
 		return "FIN_EVALUACION";
 	}
 
-    public List<AlumnoPaciente> getListaAlumnoResultado() {
+    public List<AlumnoEvaluacion> getListaAlumnoResultado() {
         return alumnos;
     }
-    public void setListaAlumnoResultado(List<AlumnoPaciente> lista) {
+    public void setListaAlumnoResultado(List<AlumnoEvaluacion> lista) {
     	alumnos = lista;
     }
 
