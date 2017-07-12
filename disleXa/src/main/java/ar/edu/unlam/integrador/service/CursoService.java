@@ -15,9 +15,8 @@ public class CursoService extends BaseService{
 		
 	}
 	
-	public Curso obtenerCurso() {
-		Curso curso= getCursoDao().obtenerCurso();
-		return curso;
+	public Curso obtenerCurso(int id) {
+		return getCursoDao().obtenerCursoPorId(id);
 	}
 
 	public CursoDao getCursoDao() {

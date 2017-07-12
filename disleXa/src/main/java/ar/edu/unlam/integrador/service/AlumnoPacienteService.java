@@ -23,8 +23,8 @@ public class AlumnoPacienteService extends BaseService{
 		this.alumnoPacienteDao = alumnoPacienteDao;
 	}
 	
-	public List<AlumnoPaciente> buscarAlumnoPaciente(String nombre, String apellido, Long dni, List<Curso> cursos){
-		List<AlumnoPaciente> alumnoPaciente = getAlumnoPacienteDao().buscarAlumnoPaciente(nombre, apellido, dni, cursos);
+	public List<AlumnoPaciente> buscarAlumnoPaciente(String nombre, String apellido, Long dni, List<Curso> cursos, Curso cursoSel){
+		List<AlumnoPaciente> alumnoPaciente = getAlumnoPacienteDao().buscarAlumnoPaciente(nombre, apellido, dni, cursos, cursoSel);
 		return alumnoPaciente;
 	}
 

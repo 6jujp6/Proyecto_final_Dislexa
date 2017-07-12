@@ -30,7 +30,7 @@ public class AlumnoPacienteDao extends BaseDao<AlumnoPaciente>{
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<AlumnoPaciente> buscarAlumnoPaciente(String nombre, String apellido, Long dni, List<Curso> cursos){
+	public List<AlumnoPaciente> buscarAlumnoPaciente(String nombre, String apellido, Long dni, List<Curso> cursos, Curso cursoSel){
 		Session s = getSessionFactory().getCurrentSession();
 			List<AlumnoPaciente> listaResultado = new ArrayList<AlumnoPaciente>();
 			Criteria criteria = s.createCriteria(Usuario.class, "USUARIO");
@@ -57,6 +57,14 @@ public class AlumnoPacienteDao extends BaseDao<AlumnoPaciente>{
 			
 			Criterion r5 = Restrictions.in("USUARIO.curso",cursos);
 	    	criteria.add(r5);
+	    	
+
+			if(cursoSel!=null){
+				Criterion r6 = Restrictions.eq("USUARIO.curso",cursoSel);
+		    	criteria.add(r6);
+			}
+			
+	    	
 	    	
 	        listaResultado.addAll(criteria.list());
 	        return listaResultado;

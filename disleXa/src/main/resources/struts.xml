@@ -18,7 +18,7 @@
 		<action name="menu" class="ar.edu.unlam.integrador.web.action.InstitucionAction">
 			<result name="SUCCESS">/jsp/institucion/institucion.jsp</result>
 		</action>
-		<action name="misAlumnos" class="ar.edu.unlam.integrador.web.action.InstitucionAction">
+		<action name="misAlumnos" class="ar.edu.unlam.integrador.web.action.InstitucionAction" method="misAlumnos">
 			<result name="SUCCESS">/jsp/institucion/alumnos.jsp</result>
 		</action>
 		<action name="datosPersonales" class="ar.edu.unlam.integrador.web.action.InstitucionAction">
@@ -31,6 +31,12 @@
 			<result name="success" type="json">
 				<param name="noCache">true</param>
 				<param name="root">listaAlumnoResultado</param>
+			</result>
+		</action>
+		<action name="listarCursos" class="ar.edu.unlam.integrador.web.action.InstitucionAction" method="listarCursos">
+			<result name="success" type="json">
+				<param name="noCache">true</param>
+				<param name="root">listaCursosResultado</param>
 			</result>
 		</action>
 	</package>

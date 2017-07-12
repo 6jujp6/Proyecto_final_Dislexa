@@ -17,15 +17,7 @@
 	   			<br>
 	   			<div class="row">
 		   			<div class="col-md-2">
-		   				<div class="dropdown">
-							<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" disabled>    Curso    
-							<span class="caret"></span></button>
-							<ul class="dropdown-menu">
-							  <li><a href="#">HTML</a></li>
-							  <li><a href="#">CSS</a></li>
-							  <li><a href="#">JavaScript</a></li>
-							</ul>
-						</div>		
+						<select class="form-control" id="cboCurso"/>
 		   			</div>
 		   			<div class="col-md-10">		   				
 		   				<s:textfield type="text" class="form-control" name="dni" placeholder="Documento" id="dni"/>		   			</div>		   							
@@ -43,7 +35,9 @@
 </div>
 <div class="row">
 	<div class="col-md-12">
-		<table class="table table-striped" id="grillaAlumnos"></table>
+		<div class="table-responsive">
+			<table class="table table-striped" id="grillaAlumnos"></table>
+		</div>
 	</div>
 </div>
 
@@ -55,55 +49,7 @@
 <script type="text/javascript" src="/disleXa/js/jquery/jqGrid/i18n/grid.locale-en.js"></script>
 <script type="text/javascript" src="/disleXa/js/jquery/jqGrid/i18n/grid.locale-es.js"></script>
 <script type="text/javascript" src="/disleXa/js/jquery/jqGrid/jquery.jqGrid.min.js"></script>
-<script>
 
-/* 	function filtrarBusqueda(){
-		$('#formularioAlumnoConsulta').on('submit', function(e){
-			
-	}
-	 */
-	function setearGrillaAlumnos(){
-		$("#grillaAlumnos").jqGrid({
-			datatype : 'json',
-			url : 'institucion/buscarAlumnos',
-			postData : {
-				"nombre" : $("#nombre").val(),
-				"apellido" : $("#apellido").val(),
-				"dni" : $("#dni").val()
-			},
-			colNames : [ 
-			            'NOMBRE',
-			           	'APELLIDO',
-			           	'DOCUMENTO',
-			           	'CURSO'
-			],
-			colModel : [
-			{
-				name : 'nombre',
-				key : true,
-				width : 200
-			}, {
-				name : 'apellido',
-				width : 200
-			}, {
-				name : 'dni',
-				width : 200
-			}
-			, {
-				name : 'curso.nombre',
-				width : 200
-			}
-			],
-			height : '250' ,
-			width: null ,
-			shrinkToFit: false ,
-			loadui : 'block' ,
-			loadonce: true ,
-			rowNum: 20,
-			scroll: 1, // PARA HABILITAR EL VIRTUAL SCROLL
-			gridview : true ,
-			autoencode : true ,
-			sortable : true 
-			});
-		}
+<script>
+	$.getScript("/disleXa/js/alumnos.js");	
 </script>
