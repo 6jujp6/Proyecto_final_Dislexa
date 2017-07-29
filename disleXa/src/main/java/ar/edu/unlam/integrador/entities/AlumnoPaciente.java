@@ -25,6 +25,10 @@ public class AlumnoPaciente extends Persona{
     @JoinColumn(name="idCurso")
     private Curso curso;
 	
+    @ManyToOne(cascade=CascadeType.ALL, optional=false)
+    @JoinColumn(name="idResponsable")
+    private Responsable responsable;
+    
 	public Curso getCurso() {
 		return curso;
 	}
@@ -32,4 +36,12 @@ public class AlumnoPaciente extends Persona{
 	public void setCurso(Curso curso) {
 		this.curso = curso;
 	}
+
+	public Responsable getResponsable() {
+		return responsable;
+	}
+
+	public void setResponsable(Responsable responsable) {
+		this.responsable = responsable;
+	}	
 }

@@ -31,3 +31,6 @@
 <!-- VOZ -->
 <script src="/disleXa/js/responsivevoice.js"></script>
 <!-- Template styles -->
+
+<!-- TOASTR -->
+<link href="/disleXa/css/toastr.css" rel="stylesheet">

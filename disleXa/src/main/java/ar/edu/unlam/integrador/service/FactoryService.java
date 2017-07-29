@@ -11,8 +11,9 @@ public class FactoryService {
 	private EvaluacionService evaluacionService;
 	private EjecucionEvaluacionService ejecucionEvaluacionService;
 	private EjecucionEvaluacionActividadService ejecucionEvaluacionActividadService;
+	private ResponsableService responsableService;
 
-	public FactoryService(UsuarioService usuarioService, AlumnoPacienteService alumnoPacienteService, PersonaService personaService, InstitucionService institucionService, CursoService cursoService, ActividadService actividadService, EvaluacionService evaluacionService, EjecucionEvaluacionService ejecucionEvaluacionService, EjecucionEvaluacionActividadService ejecucionEvaluacionActividadService){
+	public FactoryService(UsuarioService usuarioService, AlumnoPacienteService alumnoPacienteService, PersonaService personaService, InstitucionService institucionService, CursoService cursoService, ActividadService actividadService, EvaluacionService evaluacionService, EjecucionEvaluacionService ejecucionEvaluacionService, EjecucionEvaluacionActividadService ejecucionEvaluacionActividadService, ResponsableService responsableService){
 		super();
 		this.usuarioService = usuarioService;
 		this.alumnoPacienteService = alumnoPacienteService;
@@ -23,6 +24,7 @@ public class FactoryService {
 		this.evaluacionService = evaluacionService;
 		this.ejecucionEvaluacionService = ejecucionEvaluacionService;
 		this.ejecucionEvaluacionActividadService = ejecucionEvaluacionActividadService;
+		this.responsableService = responsableService;
 	}
 
 	public UsuarioService getUsuarioService() {
@@ -96,5 +98,13 @@ public class FactoryService {
 	public void setEjecucionEvaluacionActividadService(
 			EjecucionEvaluacionActividadService ejecucionEvaluacionActividadService) {
 		this.ejecucionEvaluacionActividadService = ejecucionEvaluacionActividadService;
+	}
+
+	public ResponsableService getResponsableService() {
+		return responsableService;
+	}
+
+	public void setResponsableService(ResponsableService responsableService) {
+		this.responsableService = responsableService;
 	}
 }

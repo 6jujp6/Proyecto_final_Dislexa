@@ -30,4 +30,6 @@
 	</bean>
 	<bean id="ejecucionEvaluacionActividadDao" class="ar.edu.unlam.integrador.dao.EjecucionEvaluacionActividadDao" parent="DAOTemplate">
 	</bean>
+	<bean id="responsableDao" class="ar.edu.unlam.integrador.dao.ResponsableDao" parent="DAOTemplate">
+	</bean>
 </beans>

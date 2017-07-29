@@ -8,42 +8,31 @@
 		</div>
 
 		<!--Body-->
-		<div class="md-form">
-			<i class="fa fa-envelope prefix"></i>
-			<s:textfield type="email" class="form-control" name="email"
-				placeholder="mail@ejemplo.com" id="email"
-				title="No parece un formato de mail valido"/>
-		</div>
-
-		<div class="md-form">
-			<i class="fa fa-lock prefix"></i>
-			<s:textfield type="password" class="form-control" name="password"
-				placeholder="Contraseña" id="pass"/>
-		</div>
-
-		<div class="text-center">
-			<button type="button" onclick="login();"
-				class="btn btn-primary btn-lg waves-effect waves-light">Acceder</button>
-			<hr>
-			<label for="checkbox1">Olvidaste tu contraseña? <a href="">Click
-					Aqui</a></label>
-		</div>
-
+		<form action="" role="form" class="form-horizontal">
+			<div class="md-form">
+				<i class="fa fa-envelope prefix"></i>
+				<input type="email" id="email" type="email" class="form-control validate" name="email"/>
+				<label for="email">Escribe tu email</label>
+			</div>
+	
+			<div class="md-form">
+				<i class="fa fa-lock prefix"></i>
+				<input type="password" class="form-control validate" id="pass"/>
+				<!--<s:textfield type="password" class="form-control validate" name="password" id="pass"/>-->
+				<label for="password">Contraseña</label>
+			</div>
+	
+			<div class="text-center">
+				<button type="button" onclick="login();"
+					class="btn btn-primary btn-lg waves-effect waves-light">Acceder</button>
+				<hr>
+				<label for="checkbox1">Olvidaste tu contraseña? <a href="">Click
+						Aqui</a></label>
+			</div>
+		</form>
 	</div>
 </div>
 
 
 
-<script>
-	$.getScript("/disleXa/js/login.js");
-	
-	function cargarHTMLContenido(html, div){
-		if(div=='body')
-			setTimeout(function () {
-				$('body').html(html);})
-		else
-			setTimeout(function () {
-				$("#" + div).html(html);
-			}, 500);
-	}
-</script>
+

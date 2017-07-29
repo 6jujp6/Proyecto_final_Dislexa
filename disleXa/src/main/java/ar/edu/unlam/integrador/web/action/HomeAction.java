@@ -1,14 +1,6 @@
 package ar.edu.unlam.integrador.web.action;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
-
-import ar.edu.unlam.integrador.entities.Actividad;
 import ar.edu.unlam.integrador.entities.AlumnoPaciente;
-import ar.edu.unlam.integrador.entities.EjecucionEvaluacion;
-import ar.edu.unlam.integrador.entities.EjecucionEvaluacionActividad;
-import ar.edu.unlam.integrador.entities.Evaluacion;
 import ar.edu.unlam.integrador.entities.Institucion;
 import ar.edu.unlam.integrador.entities.TipoUsuario;
 import ar.edu.unlam.integrador.entities.Usuario;
@@ -18,8 +10,8 @@ import ar.edu.unlam.integrador.web.base.BaseAction;
 public class HomeAction extends BaseAction {	
 
 	private static final long serialVersionUID = 1L;
-	private String email, pass;
-	private String nombre;
+	private String email, pass,nombre;	
+	private String direccion, telefono;
 	
 	public HomeAction(){
 		
@@ -58,6 +50,28 @@ public class HomeAction extends BaseAction {
 		}
 	}
 
+	public String registroInstitucion(){
+		
+		FactoryService factory = getFactoryService();
+		
+		try{
+			Institucion institucion = new Institucion();
+			institucion.setDireccion(direccion);
+			institucion.setFoto(null);
+			institucion.setMail(email);
+			institucion.setNombre(nombre);
+			institucion.setPassword(pass);
+			institucion.setTelefono(telefono);
+			
+			factory.getInstitucionService().altaInstitucion(institucion);
+			
+			return login();
+		}
+		catch(Exception e){
+			return "ERROR";
+		}
+	}
+	
 	public String getEmail() {
 		return email;
 	}
@@ -80,5 +94,21 @@ public class HomeAction extends BaseAction {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
 	}	
 }

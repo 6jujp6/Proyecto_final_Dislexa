@@ -18,3 +18,6 @@
 <script>
 	new WOW().init();
 </script>
+
+<!-- TOASTR -->
+<script type="text/javascript" src="/disleXa/js/toastr.js"></script>

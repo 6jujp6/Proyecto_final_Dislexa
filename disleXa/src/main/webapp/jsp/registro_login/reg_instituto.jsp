@@ -6,18 +6,19 @@
 		</div>
 		<!--Body-->
 		<div class="md-form">
-			<input type="text" id="form3" class="form-control"> <label
+			<input type="text" id="direccion" class="form-control"> <label
 				for="form3">Direccion</label>
 		</div>
 		<div class="md-form">
-			<input type="text" id="form2" class="form-control"> <label
+			<input type="text" id="telefono" class="form-control"> <label
 				for="form2">Telefono</label>
 		</div>
 
 		<div class="text-center">
-			<button class="btn btn-purple btn-lg waves-effect waves-light">Registrarse</button>
-
+			<button class="btn btn-purple btn-lg waves-effect waves-light" onclick="registroInstitucion();">Registrarse</button>
 		</div>
-
 	</div>
 </div>
+<script>
+	$.getScript("/disleXa/js/registro.js");
+</script>

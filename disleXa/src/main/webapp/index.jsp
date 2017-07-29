@@ -28,17 +28,17 @@
 
 								<!--Body-->
 								<div class="md-form">
-									<i class="fa fa-user prefix"></i> <input type="text" id="form3"
+									<i class="fa fa-user prefix"></i> <input type="text" id="nombre" name="nombre"
 										class="form-control"> <label for="form3">Nombre</label>
 								</div>
 								<div class="md-form">
 									<i class="fa fa-envelope prefix"></i> <input type="text"
-										id="form2" class="form-control"> <label for="form2">Email</label>
+										id="emailReg" class="form-control"> <label for="form2">Email</label>
 								</div>
 
 								<div class="md-form">
 									<i class="fa fa-lock prefix"></i> <input type="password"
-										id="form4" class="form-control"> <label for="form4">Contraseña</label>
+										id="passReg" class="form-control"> <label for="form4">Contraseña</label>
 								</div>
 
 								<div class="text-center">
@@ -83,5 +83,21 @@
 
 
 	<jsp:include page="jsp/include_js.jsp" />
+	<script>
+		$.getScript("/disleXa/js/registro.js");
+	</script>
+	<script>
+	$.getScript("/disleXa/js/login.js");
+	
+	function cargarHTMLContenido(html, div){
+		if(div=='body')
+			setTimeout(function () {
+				$('body').html(html);})
+		else
+			setTimeout(function () {
+				$("#" + div).html(html);
+			}, 500);
+	}
+</script>
 </body>
 </html>

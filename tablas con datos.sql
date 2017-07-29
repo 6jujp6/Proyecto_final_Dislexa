@@ -51,10 +51,13 @@ DROP TABLE IF EXISTS `alumno_paciente`;
 CREATE TABLE `alumno_paciente` (
   `idCurso` int(11) DEFAULT NULL,
   `idAlumnoPaciente` int(11) NOT NULL,
+  `idResponsable` int(11) DEFAULT NULL,
   KEY `alumnoPaciente_curso_idx` (`idCurso`),
   KEY `alumnoPaciente_persona` (`idAlumnoPaciente`),
+  KEY `alumnoPaciente_responsable_idx` (`idResponsable`),
   CONSTRAINT `alumnoPaciente_curso` FOREIGN KEY (`idCurso`) REFERENCES `curso` (`idCurso`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `alumnoPaciente_persona` FOREIGN KEY (`idAlumnoPaciente`) REFERENCES `persona` (`idPersona`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `alumnoPaciente_persona` FOREIGN KEY (`idAlumnoPaciente`) REFERENCES `persona` (`idPersona`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `alumnoPaciente_responsable` FOREIGN KEY (`idResponsable`) REFERENCES `responsable` (`idResponsable`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -64,7 +67,7 @@ CREATE TABLE `alumno_paciente` (
 
 LOCK TABLES `alumno_paciente` WRITE;
 /*!40000 ALTER TABLE `alumno_paciente` DISABLE KEYS */;
-INSERT INTO `alumno_paciente` VALUES (1,6),(1,7),(1,8),(2,9),(2,10),(3,12),(NULL,13);
+INSERT INTO `alumno_paciente` VALUES (1,6,NULL),(1,7,NULL),(1,8,NULL),(2,9,NULL),(2,10,NULL),(3,12,NULL),(NULL,13,NULL);
 /*!40000 ALTER TABLE `alumno_paciente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -129,7 +132,7 @@ CREATE TABLE `ejecucion_evaluacion` (
 
 LOCK TABLES `ejecucion_evaluacion` WRITE;
 /*!40000 ALTER TABLE `ejecucion_evaluacion` DISABLE KEYS */;
-INSERT INTO `ejecucion_evaluacion` VALUES (1,NULL,6,7,NULL,NULL,'\0'),(2,NULL,8,7,NULL,NULL,'\0'),(3,NULL,10,8,NULL,NULL,'\0');
+INSERT INTO `ejecucion_evaluacion` VALUES (1,NULL,6,7,NULL,NULL,'\0'),(2,NULL,8,7,NULL,NULL,'\0'),(3,NULL,10,8,'2017-07-22 13:37:34','2017-07-22 14:06:19','');
 /*!40000 ALTER TABLE `ejecucion_evaluacion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -159,7 +162,7 @@ CREATE TABLE `ejecucion_evaluacion_actividad` (
 
 LOCK TABLES `ejecucion_evaluacion_actividad` WRITE;
 /*!40000 ALTER TABLE `ejecucion_evaluacion_actividad` DISABLE KEYS */;
-INSERT INTO `ejecucion_evaluacion_actividad` VALUES (1,2,1,NULL),(2,1,1,NULL),(3,2,2,NULL),(4,1,2,NULL),(5,2,3,NULL),(6,5,3,NULL),(7,1,3,NULL),(8,3,3,NULL),(9,6,3,NULL),(10,4,3,NULL);
+INSERT INTO `ejecucion_evaluacion_actividad` VALUES (1,2,1,NULL),(2,1,1,NULL),(3,2,2,NULL),(4,1,2,NULL),(5,2,3,''),(6,5,3,''),(7,1,3,''),(8,3,3,''),(9,6,3,''),(10,4,3,'Leer');
 /*!40000 ALTER TABLE `ejecucion_evaluacion_actividad` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -238,7 +241,7 @@ CREATE TABLE `institucion` (
 
 LOCK TABLES `institucion` WRITE;
 /*!40000 ALTER TABLE `institucion` DISABLE KEYS */;
-INSERT INTO `institucion` VALUES ('colegio numero 7','crovara 340','156989514',4),('Colegio Cervantes','vyetes 150','46528961',5);
+INSERT INTO `institucion` VALUES ('colegio numero 7','crovara 340','156989514',4),('Colegio Cervantes','vyetes 150','46528961',5),('Juan Pablo ll','Montevideo 2350','46521186',14),('San Luis Gonzaga','Jose Ingenieros 120','46558921',15);
 /*!40000 ALTER TABLE `institucion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -299,6 +302,30 @@ LOCK TABLES `profesional` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `responsable`
+--
+
+DROP TABLE IF EXISTS `responsable`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `responsable` (
+  `idResponsable` int(11) NOT NULL,
+  `relacion` varchar(45) DEFAULT NULL,
+  KEY `responsable_persona` (`idResponsable`),
+  CONSTRAINT `responsable_persona` FOREIGN KEY (`idResponsable`) REFERENCES `persona` (`idPersona`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `responsable`
+--
+
+LOCK TABLES `responsable` WRITE;
+/*!40000 ALTER TABLE `responsable` DISABLE KEYS */;
+/*!40000 ALTER TABLE `responsable` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `usuario`
 --
 
@@ -312,7 +339,7 @@ CREATE TABLE `usuario` (
   `foto` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idUsuario`),
   UNIQUE KEY `idUsuario_UNIQUE` (`idUsuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -321,7 +348,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (4,'info@escuela7.com','123',NULL),(5,'info@escuelaCervantes.com','123',NULL),(6,'maxi@gmail.com','1234',NULL),(7,'julian@gmail.com','123',NULL),(8,'mariana.sanchez@gmail.com','123',NULL),(9,'santiagoPerez@gmail.com','123',NULL),(10,'sol_espindola@gmail.com','123',NULL),(12,'celeste.ares@gmail.com','123',NULL),(13,'juan_cruz@gmail.com','123',NULL);
+INSERT INTO `usuario` VALUES (4,'info@escuela7.com','123',NULL),(5,'info@escuelaCervantes.com','123',NULL),(6,'maxi@gmail.com','1234',NULL),(7,'julian@gmail.com','123',NULL),(8,'mariana.sanchez@gmail.com','123',NULL),(9,'santiagoPerez@gmail.com','123',NULL),(10,'sol_espindola@gmail.com','123',NULL),(12,'celeste.ares@gmail.com','123',NULL),(13,'juan_cruz@gmail.com','123',NULL),(14,'info@juanpablosegundo.edu.ar','123',NULL),(15,'info@sanluisgonzaga.com','123',NULL);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -334,4 +361,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-07-12 14:44:13
+-- Dump completed on 2017-07-29 16:08:48

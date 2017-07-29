@@ -13,6 +13,9 @@
 			<result name="ALUMNO_PACIENTE">/jsp/paciente/paciente.jsp</result>
 			<result name="PROFESIONAL">/jsp/profesional/profesional.jsp</result>
 		</action>
+		<action name="registroInstitucion" class="ar.edu.unlam.integrador.web.action.HomeAction" method="registroInstitucion">
+			<result name="SUCCESS">/jsp/institucion/institucion.jsp</result>
+		</action>
 	</package>
 	<package name="institucion" namespace="/institucion" extends="default">
 		<action name="menu" class="ar.edu.unlam.integrador.web.action.InstitucionAction">

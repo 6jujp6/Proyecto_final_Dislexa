@@ -16,6 +16,7 @@
 		<constructor-arg ref="evaluacionService" />
 		<constructor-arg ref="ejecucionEvaluacionService" />
 		<constructor-arg ref="ejecucionEvaluacionActividadService" />
+		<constructor-arg ref="responsableService" />
 	</bean>
 	
 	<bean id="usuarioService" class="ar.edu.unlam.integrador.service.UsuarioService">
@@ -44,6 +45,9 @@
 	</bean>		
 	<bean id="ejecucionEvaluacionActividadService" class="ar.edu.unlam.integrador.service.EjecucionEvaluacionActividadService">
 		<property name="ejecucionEvaluacionActividadDao" ref="ejecucionEvaluacionActividadDao" />
+	</bean>		
+	<bean id="responsableService" class="ar.edu.unlam.integrador.service.ResponsableService">
+		<property name="responsableDao" ref="responsableDao" />
 	</bean>		
 	<context:component-scan base-package="ar.edu.unlam.integrador" />
 </beans>
