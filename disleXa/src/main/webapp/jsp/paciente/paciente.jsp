@@ -1,7 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 
 <!--Navbar-->
@@ -13,8 +14,8 @@
 			aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<a class="navbar-brand" href="#"> <img
-			src="/disleXa/img/isologo/isologo.png" />
+		<a class="navbar-brand" href="#"> <img class="isologo"
+			src="/disleXa/img/isologo/isologo3.png" />
 		</a>
 		<div class="collapse navbar-collapse" id="navbarNav1">
 			<ul class="navbar-nav ml-auto">
@@ -38,10 +39,11 @@
 		<div class="col-lg-3 wow fadeIn" data-wow-delay="0.2s">
 
 			<div class="widget-wrapper">
-				<div class="list-group">
+				<div class="sticky">
 
-					<a href="#" class="list-group-item active">Bienvenido/a <s:text name="nombre"></s:text>!</a> <a href="javascript:void(0);"
-						onclick="buscarActividades();"
+					<a href="#" class="list-group-item active">Bienvenido/a <s:text
+							name="nombre"></s:text>!
+					</a> <a href="javascript:void(0);" onclick="buscarActividades();"
 						class="list-group-item"><span
 						class="glyphicon glyphicon-pencil"></span> Actividades</a><a
 						href="javascript:void(0);"
@@ -90,24 +92,31 @@
 
 	</div>
 </div>
-<!--/.Main layout--> </main>
+</main>
+<!--/.Main layout-->
+<p class="girl-text wow fadeInRight">Bienvenido</p>
+<img src="/disleXa/images/Dislexa_girl/dislexa_bienvenido.png"
+	class="girl wow fadeInLeft" />
+<div class="transparente"></div>
 
-<jsp:include page="../include_footer.jsp" />
+<%-- <jsp:include page="../include_footer.jsp" /> --%>
 
 <jsp:include page="../include_js.jsp" />
 
 <script>
-	function buscarActividades(){
+	function buscarActividades() {
 		$.ajax({
 			url : 'paciente/actividades',
 			type : "GET",
 			contentType : false,
-			success: function (data) {
-				cargarHTMLContenido(data,'divContenidoPaciente');
+			success : function(data) {
+				cargarHTMLContenido(data, 'divContenidoPaciente');
 			},
-			error: function (xhr, ajaxOptions, thrownError) {
+			error : function(xhr, ajaxOptions, thrownError) {
 				alert("error al cargar actividades");
 			}
 		});
 	}
+
+	
 </script>
