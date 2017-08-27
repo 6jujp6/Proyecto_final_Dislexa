@@ -1,6 +1,4 @@
-function login(){	
-	
-	
+function login(){		
 	if(validarInputs()){	
 		$.ajax({
 			url : 'index/login',
@@ -31,8 +29,7 @@ function login(){
 						  "showMethod": "fadeIn",
 						  "hideMethod": "fadeOut"
 						}
-				toastr["error"]("Usuario o password incorrecto")
-				
+				toastr["error"]("Usuario o password incorrecto")				
 			}
 		});
 	}

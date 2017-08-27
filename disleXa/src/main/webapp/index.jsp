@@ -28,18 +28,17 @@
 
 								<!--Body-->
 								<div class="md-form">
-									<i class="fa fa-user prefix"></i> <input type="text"
-										id="nombre" name="nombre" class="form-control"> <label
-										for="form3">Nombre</label>
+									<i class="fa fa-user prefix"></i> <input type="text" id="nombre" name="nombre"
+										class="form-control validate"> <label for="form3">Nombre</label>
 								</div>
 								<div class="md-form">
-									<i class="fa fa-envelope prefix"></i> <input type="text"
-										id="emailReg" class="form-control"> <label for="form2">Email</label>
+									<i class="fa fa-envelope prefix"></i> <input type="email"
+										id="emailReg" class="form-control validate"> <label for="form2">Email</label>
 								</div>
 
 								<div class="md-form">
 									<i class="fa fa-lock prefix"></i> <input type="password"
-										id="passReg" class="form-control"> <label for="form4">Contraseña</label>
+										id="passReg" class="form-control validate"> <label for="form4">Contraseña</label>
 								</div>
 
 								<div class="text-center">

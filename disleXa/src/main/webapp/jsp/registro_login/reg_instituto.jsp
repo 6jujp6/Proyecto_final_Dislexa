@@ -6,11 +6,11 @@
 		</div>
 		<!--Body-->
 		<div class="md-form">
-			<input type="text" id="direccion" class="form-control"> <label
+			<input type="text" id="direccion" class="form-control validate"> <label
 				for="form3">Direccion</label>
 		</div>
 		<div class="md-form">
-			<input type="text" id="telefono" class="form-control"> <label
+			<input type="text" id="telefono" class="form-control validate"> <label
 				for="form2">Telefono</label>
 		</div>
 

@@ -14,7 +14,7 @@
 			<result name="PROFESIONAL">/jsp/profesional/profesional.jsp</result>
 		</action>
 		<action name="registroInstitucion" class="ar.edu.unlam.integrador.web.action.HomeAction" method="registroInstitucion">
-			<result name="SUCCESS">/jsp/institucion/institucion.jsp</result>
+			<result name="INSTITUCION">/jsp/institucion/institucion.jsp</result>
 		</action>
 	</package>
 	<package name="institucion" namespace="/institucion" extends="default">
