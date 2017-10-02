@@ -1,6 +1,6 @@
 <!-- <script src="/disleXa/js/jquery-2.2.4.js" ></script> -->
 
-<script src="/disleXa/js/login.js"></script>
+
 
 <!-- JQuery -->
 <script type="text/javascript" src="/disleXa/js/jquery-2.2.3.min.js"></script>
@@ -21,3 +21,5 @@
 
 <!-- TOASTR -->
 <script type="text/javascript" src="/disleXa/js/toastr.js"></script>
+
+<script src="/disleXa/js/login.js"></script>

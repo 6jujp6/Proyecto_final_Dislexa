@@ -1,10 +1,16 @@
 package ar.edu.unlam.integrador.web.action;
 
-import ar.edu.unlam.integrador.web.base.BaseAction;
-
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
+
+import com.opensymphony.xwork2.ActionContext;
 
 import ar.edu.unlam.integrador.entities.AlumnoEvaluacion;
 import ar.edu.unlam.integrador.entities.AlumnoPaciente;
@@ -13,6 +19,7 @@ import ar.edu.unlam.integrador.entities.EjecucionEvaluacion;
 import ar.edu.unlam.integrador.entities.EjecucionEvaluacionActividad;
 import ar.edu.unlam.integrador.entities.Institucion;
 import ar.edu.unlam.integrador.service.FactoryService;
+import ar.edu.unlam.integrador.web.base.BaseAction;
 
 public class AlumnoAction extends BaseAction{
 
@@ -95,9 +102,11 @@ public class AlumnoAction extends BaseAction{
 		return SUCCESS;
 	}
 	
-	public String guardarResultado(){
-		FactoryService factory = getFactoryService();		
+	public String guardarResultado() throws IOException{
 		
+		FactoryService factory = getFactoryService();
+		
+				
 		//obtengo la ejecucion de la evaluacion
 		ejecucionEvaluacion = factory.getEjecucionEvaluacionService().obtenerPorId(getIdEjecEval());
 		//obtengo la lista de actividades de la evaluacion
@@ -105,6 +114,8 @@ public class AlumnoAction extends BaseAction{
 		actividadesEvaluacion = factory.getEjecucionEvaluacionActividadService().obtenerActividadesPorEjecucionEvaluacion(ejecucionEvaluacion);
 		
 		if(resolucion!=null){ //no es la primer actividad
+			System.out.println("entro al if");
+			System.out.println(resolucion);
 			for(EjecucionEvaluacionActividad actividad : actividadesEvaluacion){
 				if(actividad.getIdEjecucionEvaluacionActividad()==idEjecEvalActiv){
 					actividad.setResolucion(resolucion);
@@ -131,6 +142,43 @@ public class AlumnoAction extends BaseAction{
 		ejecucionEvaluacion.setPendienteDiagnostico(true);
 		factory.getEjecucionEvaluacionService().actualizar(ejecucionEvaluacion);
 		return "FIN_EVALUACION";
+	}
+	
+	public void guardarAudio() {
+		
+		FactoryService factory = getFactoryService();
+		
+	//	String userdir = System.getProperty("user.dir");
+		
+		Map parameters = ActionContext.getContext().getParameters();
+		File audio = ((File[]) parameters.values().toArray()[0])[0];
+		int idEjecEvalActiv = Integer.parseInt(((String[]) parameters.values().toArray()[3])[0]);
+		Timestamp hora = new Timestamp(System.currentTimeMillis());
+		//File archivoDestino = new File("/audios"+hora.getTime()+".wav");
+		File archivoDestino = new File("C:\\Users\\Maxi Rodriguez\\Documents\\Proyecto_final_Dislexia\\audios\\"+hora.getTime()+".wav");
+		try {
+			Files.copy(audio.toPath(), archivoDestino.toPath(), StandardCopyOption.REPLACE_EXISTING);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+
+		
+		//obtengo la ejecucion de la evaluacion
+		ejecucionEvaluacion = factory.getEjecucionEvaluacionService().obtenerPorId(idEjecEvalActiv);
+		//obtengo la lista de actividades de la evaluacion
+		List<EjecucionEvaluacionActividad> actividadesEvaluacion = new ArrayList<EjecucionEvaluacionActividad>();
+		actividadesEvaluacion = factory.getEjecucionEvaluacionActividadService().obtenerActividadesPorEjecucionEvaluacion(ejecucionEvaluacion);
+		
+		if(resolucion!=null){ //no es la primer actividad
+			for(EjecucionEvaluacionActividad actividad : actividadesEvaluacion){
+				if(actividad.getIdEjecucionEvaluacionActividad()==idEjecEvalActiv){
+					actividad.setResolucion(archivoDestino.toString());
+					factory.getEjecucionEvaluacionActividadService().actualizar(actividad);
+					setResolucion(null);					
+				}
+			}
+		}
 	}
 
     public List<AlumnoEvaluacion> getListaAlumnoResultado() {
@@ -211,4 +259,6 @@ public class AlumnoAction extends BaseAction{
 	public void setIdCurso(int idCurso) {
 		this.idCurso = idCurso;
 	}		
+	
+	
 }

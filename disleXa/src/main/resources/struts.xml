@@ -56,6 +56,10 @@
 		<action name="mensaje" class="ar.edu.unlam.integrador.web.action.PacienteAction" method="mensaje">
 			<result name="SUCCESS">/jsp/paciente/mensaje.jsp</result>
 		</action>
+		<action name="guardarAudio" class="ar.edu.unlam.integrador.web.action.AlumnoAction" method="guardarAudio">
+			<result name="222oraciones">/jsp/actividad/222oraciones.jsp</result>
+			<!-- <result name="222oraciones">/jsp/actividad/222oraciones.jsp</result>-->
+		</action>
 <!-- 		<action name="buscarActividades" class="ar.edu.unlam.integrador.action.PacienteAction" method="buscarActividades"> -->
 <!-- 			<result name="SUCCESS">/jsp/actividad/112laminaf.jsp</result> -->
 <!-- 		</action> -->

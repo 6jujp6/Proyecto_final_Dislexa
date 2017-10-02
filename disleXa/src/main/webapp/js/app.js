@@ -5,6 +5,7 @@ function restore(){
   $("#pause").replaceWith('<a class="button one" id="pause">Pause</a>');
   $(".one").addClass("disabled");
   Fr.voice.stop();
+
 }
 
 button_rec();
@@ -13,16 +14,16 @@ button_rec();
 // var Apps = {  
   function button_rec(){
     // alert('button rec');
-    $('.type_buttons').html('<input type="button" class="btn btn-danger" id="record" name=""></input>');
-    $('#record').val('Grabar');
+    $('.type_buttons').html('<input type="button" class="content_button_rs" id="record" name=""></input>');
+    $('#record').val('REC');
     $('#record').on('click', function(){
       button_stop();
     });
   };
   function button_stop(){
-    $('.type_buttons').html('<input type="button" class="btn btn-success" id="download" name=""></input>');
-//    $('.content_button_rs').css({'color':'#FFF','background':'#19922d'});
-    $('#download').val('Detener');
+    $('.type_buttons').html('<input type="button" class="content_button_rs" id="download" name=""></input>');
+    $('.content_button_rs').css({'color':'#FFF','background':'#19922d'});
+    $('#download').val('STOP');
     $(document).on("click", "#rec_stop:not(.disabled)", function(){
       
       Fr.voice.record($("#live").is(":checked"), function(){
@@ -54,6 +55,7 @@ button_rec();
       return fecha_final;
     }
 
+      
 
     $('#download').on('click', function(){
         
@@ -65,9 +67,10 @@ button_rec();
             $("<a href='" + url + "' download='"+date_now()+".mp3'></a>")[0].click();
           }, "URL");
         }else{
-          Fr.voice.export(function(url){
-            $("<a href='" + url + "' download='"+date_now()+".wav'></a>")[0].click();
-          }, "URL");
+          Fr.voice.export(function(blod){
+
+            $("<a href='" + blod + "' download='"+date_now()+".wav'></a>")[0].click();
+          }, "blob");
         };
       
         restore();
@@ -183,7 +186,24 @@ $(document).ready(function(){
     
 
   $(document).on("click", "#download:not(.disabled)", function(){
+      function upload(blob){
+      var formData = new FormData();
+      formData.append('file', blob);
+      formData.append('idEjecEvalActiv', $("#idEjecEvalActiv").val());
 
+      $.ajax({
+        url: "paciente/guardarAudio",
+        type: 'POST',
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function(url) {
+          $("#audio").attr("src", url);
+          $("#audio")[0].play();
+          alert("Saved In Server. See audio element's src for URL");
+        }
+      });
+    }
 
     
     if($(this).parent().data("type") === "mp3"){
@@ -191,13 +211,10 @@ $(document).ready(function(){
         $("<a href='" + url + "' download='"+date_now()+".mp3'></a>")[0].click();
       }, "URL");
     }else{
-      Fr.voice.export(function(url){
-        $("<a href='" + url + "' download='"+date_now()+".wav'>")[0].click();
-      }, "URL");
+      Fr.voice.export(upload, "blob");
     }
     restore();
-  });
-
+  }); 
 
 
   $(document).on("click", "#base64:not(.disabled)", function(){
@@ -219,29 +236,5 @@ $(document).ready(function(){
     restore();
   });
 
-  $(document).on("click", "#save:not(.disabled)", function(){
-    function upload(blob){
-      var formData = new FormData();
-      formData.append('file', blob);
-
-      $.ajax({
-        url: "upload.php",
-        type: 'POST',
-        data: formData,
-        contentType: false,
-        processData: false,
-        success: function(url) {
-          $("#audio").attr("src", url);
-          $("#audio")[0].play();
-          alert("Saved In Server. See audio element's src for URL");
-        }
-      });
-    }
-    if($(this).parent().data("type") === "mp3"){
-      Fr.voice.exportMP3(upload, "blob");
-    }else{
-      Fr.voice.export(upload, "blob");
-    }
-    restore();
-  });
+ 
 });
