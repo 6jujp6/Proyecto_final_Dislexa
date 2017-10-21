@@ -11,13 +11,14 @@
 	<s:hidden name="idEjecEval" id="idEjecEval" />
 
 	<h4 id="text" class="text-jutify">
-		Ahora te voy a leer algo te pido que lo escuches<a href="#" class="btn btn-info"
+		Escucha atentamente la siguiente historia:<a href="#"
+			class="btn btn-info"
 			onclick="responsiveVoice.speak(document.getElementById('text').innerText, 'Spanish Female');"><i
-			class="fa fa-microphone" aria-hidden="true"></i></a>
-			</h4>
-<input class="btn btn-primary"
+			class="fa fa-volume-up" aria-hidden="true"></i></a>
+	</h4>
+	<input class="btn btn-primary"
 		onclick="responsiveVoice.speak('Mariela había preparado el regalo y había ayudado a su mejor amiga a inflar los globos y a terminar la torta. Estaba muy contenta porque era el día de la fiesta. Faltaba poco para que la vinieran a buscar, pero Mariela prendió la tele y daban su programa preferido. Cuando sonó el timbre corrió apurada a ponerse el vestido y a peinarse. Se fueron caminando porque era cerca. Al llegar a la fiesta y saludar a su amiga no tenía regalo.', 'Spanish Latin American Female');"
-		type="button" value="Comenzar a leer cuento" /> <BR> <BR>
+		type="button" value="Comenzar a escuchar" /> <BR> <BR>
 
 	<div class="row">
 		<div class="col-md-4">
@@ -40,50 +41,50 @@
 		</div>
 	</div>
 	<br>
-	<div class="row">
-		<div class="col-md-4">
-			<p>¿Que hizo antes de que la vinieran a buscar?</p>
-			<input class="btn btn-info"
-				onclick="responsiveVoice.speak('¿Que hizo antes de que la vinieran a buscar?', 'Spanish Latin American Female');"
-				type="button" value="Leer" />
-		</div>
-		<div class="col-md-4">
-			<p>¿Qué pasó después?</p>
-			<input class="btn btn-info"
-				onclick="responsiveVoice.speak('¿Qué pasó después?', 'Spanish Latin American Female');"
-				type="button" value="Leer" />
-		</div>
-		<div class="col-md-4">
-			<p>¿Qué se festejaba? ¿Cómo te diste cuenta?</p>
-			<input class="btn btn-info"
-				onclick="responsiveVoice.speak('¿Qué se festejaban? ¿Cómo te diste cuenta?', 'Spanish Latin American Female');"
-				type="button" value="Leer" />
-		</div>
-	</div>
-	<br>
-	<div class="row">
-		<div class="col-md-4">
-			<p>¿Que hizo antes de que la vinieran a buscar?</p>
-			<input class="btn btn-info"
-				onclick="responsiveVoice.speak('¿Que hizo antes de que la vinieran a buscar?', 'Spanish Latin American Female');"
-				type="button" value="Leer" />
-		</div>
-	</div>
+	<!-- 	<div class="row"> -->
+	<!-- 		<div class="col-md-4"> -->
+	<!-- 			<p>¿Que hizo antes de que la vinieran a buscar?</p> -->
+	<!-- 			<input class="btn btn-info" -->
+	<!-- 				onclick="responsiveVoice.speak('¿Que hizo antes de que la vinieran a buscar?', 'Spanish Latin American Female');" -->
+	<!-- 				type="button" value="Leer" /> -->
+	<!-- 		</div> -->
+	<!-- 		<div class="col-md-4"> -->
+	<!-- 			<p>¿Qué pasó después?</p> -->
+	<!-- 			<input class="btn btn-info" -->
+	<!-- 				onclick="responsiveVoice.speak('¿Qué pasó después?', 'Spanish Latin American Female');" -->
+	<!-- 				type="button" value="Leer" /> -->
+	<!-- 		</div> -->
+	<!-- 		<div class="col-md-4"> -->
+	<!-- 			<p>¿Qué se festejaba? ¿Cómo te diste cuenta?</p> -->
+	<!-- 			<input class="btn btn-info" -->
+	<!-- 				onclick="responsiveVoice.speak('¿Qué se festejaban? ¿Cómo te diste cuenta?', 'Spanish Latin American Female');" -->
+	<!-- 				type="button" value="Leer" /> -->
+	<!-- 		</div> -->
+	<!-- 	</div> -->
+	<!-- 	<br> -->
+	<!-- 	<div class="row"> -->
+	<!-- 		<div class="col-md-4"> -->
+	<!-- 			<p>¿Que hizo antes de que la vinieran a buscar?</p> -->
+	<!-- 			<input class="btn btn-info" -->
+	<!-- 				onclick="responsiveVoice.speak('¿Que hizo antes de que la vinieran a buscar?', 'Spanish Latin American Female');" -->
+	<!-- 				type="button" value="Leer" /> -->
+	<!-- 		</div> -->
+	<!-- 	</div> -->
 
-	<span id="text1">Para empezar a grabar toca el botón rojo y para
-			finalizar toca el verde <a href="#" class="btn btn-info"
-			onclick="responsiveVoice.speak(document.getElementById('text1').innerText, 'Spanish Female');"><i
-			class="fa fa-microphone" aria-hidden="true"></i></a></span>
-	<br>
+	<span id="text1"><i class="fa fa-info-circle" aria-hidden="true"></i>
+		Para grabar toca el botón en rojo. Para finalizar tocalo cuando este
+		verde: <a href="#" class="btn btn-info"
+		onclick="responsiveVoice.speak(document.getElementById('text1').innerText, 'Spanish Female');"><i
+			class="fa fa-volume-up" aria-hidden="true"></i></a></span> <br>
 	<div class="type_buttons"></div>
 
-<!-- 	<br> <br> <br> <label for="comment">Avance:</label> -->
-<!-- 	<div class="progress"> -->
-<!-- 		<div class="progress-bar" role="progressbar" aria-valuenow="70" -->
-<!-- 			aria-valuemin="0" aria-valuemax="100" style="width: 00%">0%</div> -->
-<!-- 	</div> -->
-		<a href="#" onClick="guardarResultado();"
-			class="btn btn-info pull-right">Siguiente</a>
+	<!-- 	<br> <br> <br> <label for="comment">Avance:</label> -->
+	<!-- 	<div class="progress"> -->
+	<!-- 		<div class="progress-bar" role="progressbar" aria-valuenow="70" -->
+	<!-- 			aria-valuemin="0" aria-valuemax="100" style="width: 00%">0%</div> -->
+	<!-- 	</div> -->
+	<a href="#" onClick="guardarResultado();"
+		class="btn btn-info pull-right">Siguiente</a>
 </div>
 
 

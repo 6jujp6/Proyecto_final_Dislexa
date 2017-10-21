@@ -80,24 +80,26 @@
 		</div>
 	</div>
 	<!--/.Mask-->
-
-
+	
+	
 	<jsp:include page="jsp/include_js.jsp" />
 	<script>
 		$.getScript("/disleXa/js/registro.js");
 	</script>
 	<script>
-	$.getScript("/disleXa/js/login.js");
-	
-	function cargarHTMLContenido(html, div){
-		if(div=='body')
-			setTimeout(function () {
-				$('body').html(html);})
-		else
-			setTimeout(function () {
-				$("#" + div).html(html);
-			}, 500);
-	}
-</script>
+		$.getScript("/disleXa/js/login.js");
+
+		function cargarHTMLContenido(html, div) {
+			if (div == 'body')
+				setTimeout(function() {
+					$('body').html(html);
+				})
+			else
+				setTimeout(function() {
+					$("#" + div).html(html);
+				}, 500);
+		}
+	</script>
+		
 </body>
 </html>

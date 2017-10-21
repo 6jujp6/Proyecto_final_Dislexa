@@ -10,6 +10,10 @@ html, body, header, .view {
 	background: #fff;
 }
 
+.isologo {
+	width: 50%;
+}
+
 .top-nav-collapse {
 	background-color: #fff;
 }
@@ -52,7 +56,8 @@ html, body, header, .view {
 main {
 	padding-top: 3rem;
 	padding-bottom: 2rem;
-	background: url("/disleXa/img/design/background2.jpg") no-repeat center center fixed;
+	background: url("/disleXa/img/design/background2.jpg") no-repeat center
+		center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;

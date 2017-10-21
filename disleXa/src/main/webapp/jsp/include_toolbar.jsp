@@ -7,8 +7,8 @@
 			aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<a class="navbar-brand" href="/disleXa"> <img
-			src="/disleXa/img/isologo/isologo.png" />
+		<a class="navbar-brand" href="/disleXa"> <img class="isologo"
+			src="/disleXa/img/isologo/isologo3.png" />
 		</a>
 		<div class="collapse navbar-collapse" id="navbarNav1">
 			<ul class="navbar-nav ml-auto">

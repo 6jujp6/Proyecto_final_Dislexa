@@ -26,6 +26,7 @@
 <!-- ESTILOS -->
 <link rel="stylesheet" href="/disleXa/css/chat.css">
 <link rel="stylesheet" href="/disleXa/css/dislexa.css">
+<link rel="stylesheet" href="/disleXa/css/dislexa_girl.css">
 <link rel="stylesheet" href="/disleXa/css/login.css">
 
 <!-- VOZ -->
