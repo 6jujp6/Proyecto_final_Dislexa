@@ -3,9 +3,8 @@
 
 
 	<h4 id="text" class="text-jutify">
-		Te voy a dictar algunas oraciones para que vos escribas. <a href="#" class="btn btn-info"
-			onclick="responsiveVoice.speak(document.getElementById('text').innerText, 'Spanish Female');"><i
-			class="fa fa-microphone" aria-hidden="true"></i></a>
+		Escribe las oraciones que oigas a continuacion: <a href="#" class="btn btn-info"
+			onclick="responsiveVoice.speak(document.getElementById('text').innerText, 'Spanish Female');"><i class="fa fa-volume-up" aria-hidden="true"></i></a>
 	</h4>
 	<br> <br>
 

@@ -80,6 +80,8 @@
 		</div>
 	</div>
 	<!--/.Mask-->
+	
+	
 	<jsp:include page="jsp/include_js.jsp" />
 	<script>
 		$.getScript("/disleXa/js/registro.js");
@@ -98,5 +100,6 @@
 				}, 500);
 		}
 	</script>
+		
 </body>
 </html>

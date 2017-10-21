@@ -39,7 +39,7 @@
 		<div class="col-lg-3 wow fadeIn" data-wow-delay="0.2s">
 
 			<div class="widget-wrapper">
-				<div class="sticky">
+				<div class="list-group">
 
 					<a href="#" class="list-group-item active">Bienvenido/a <s:text
 							name="nombre"></s:text>!
@@ -81,7 +81,11 @@
 			<div class="row wow fadeIn" data-wow-delay="0.4s">
 				<div class="col-lg-12">
 
-					<div id="divContenidoPaciente" class="jumbotron"></div>
+					<div id="divContenidoPaciente" class="jumbotron">
+					<a href="javascript:void(0);" onclick="buscarActividades();"
+						class="list-group-item"><img class="animated tada" src="/disleXa/img/juega_ahora.jpg" /></a>
+					
+					</div>
 				</div>
 			</div>
 			<!--/.First row-->
@@ -94,10 +98,22 @@
 </div>
 </main>
 <!--/.Main layout-->
-<p class="girl-text wow fadeInRight">Bienvenido</p>
-<img src="/disleXa/images/Dislexa_girl/dislexa_bienvenido.png"
-	class="girl wow fadeInLeft" />
-<div class="transparente"></div>
+
+<!--/.DISLEXA-->
+<div class="girl-button wow fadeInRight" id="esconder">
+	<i class="fa fa-close" aria-hidden="true"></i>
+</div>
+<p class="girl-text wow fadeInRight" id="dtexto">Bienvenido!</p>
+
+<img src="/disleXa/img/Dislexa_girl/dislexa_bienvenido.png"
+	class="girl wow fadeInLeft" id="girl" />
+<div class="transparente" id="transparente"></div>
+<button class="help-button btn btn-outline-black btn-lg wow fadeInLeft"
+	id="ayuda">
+	<i class="fa fa-question" aria-hidden="true"></i>
+</button>
+
+<!--/.DISLEXA-->
 
 <%-- <jsp:include page="../include_footer.jsp" /> --%>
 
@@ -116,7 +132,25 @@
 				alert("error al cargar actividades");
 			}
 		});
-	}
+	};
+</script>
+<script>
+	$(document).ready(function() {
+		$("#esconder").click(function() {
+			$("#girl").toggle();
+			$("#esconder").toggle();
+			$("#transparente").toggle();
+			$("#dtexto").toggle();
+			$("#ayuda").toggle();
+		});
+		$("#ayuda").click(function() {
+			$("#girl").toggle();
+			$("#esconder").toggle();
+			$("#transparente").toggle();
+			$("#dtexto").toggle();
+			$("#ayuda").toggle();
+		});
+	});
 
 	
 </script>

@@ -8,9 +8,10 @@
 	<s:hidden name="idEjecEvalActiv" id="idEjecEvalActiv" />
 	<s:hidden name="idEjecEval" id="idEjecEval" />
 	<h4 id="text" class="text-jutify">
-		Escribe sobre lo que quieras <a href="#" class="btn btn-info"
-			onclick="responsiveVoice.speak(document.getElementById('text').innerText, 'Spanish Female');"><i
-			class="fa fa-microphone" aria-hidden="true"></i></a>
+		Escribe algo que te gustaria contarnos: <a href="#" class="btn btn-info"
+			onclick="responsiveVoice.speak(document.getElementById('text').innerText, 'Spanish Female');">
+			<i class="fa fa-volume-up" aria-hidden="true"></i>
+		</a>
 	</h4>
 
 	<div class="md-form">

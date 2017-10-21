@@ -9,16 +9,16 @@
 	<s:hidden name="idEjecEval" id="idEjecEval" />
 
 	<h4 id="text" class="text-jutify">
-		Aca hay algunas oraciones escritas debajo de las imágenes. Te pido que
-		las leas en voz alta:<a href="#" class="btn btn-info"
+		Lee en voz alta las siguientes oraciones:<a href="#" class="btn btn-info"
 			onclick="responsiveVoice.speak(document.getElementById('text').innerText, 'Spanish Female');"><i
-			class="fa fa-microphone" aria-hidden="true"></i></a>
+			class="fa fa-volume-up" aria-hidden="true"></i></a>
 	</h4>
 	<p>
-		<span id="text1">Para empezar toca el botón rojo y para
-			finalizar toca el verde <a href="#" class="btn btn-info"
+		<span id="text1"><i class="fa fa-info-circle"
+			aria-hidden="true"></i> Para grabar toca el botón en rojo. Para
+			finalizar tocalo cuando este verde: <a href="#" class="btn btn-info"
 			onclick="responsiveVoice.speak(document.getElementById('text1').innerText, 'Spanish Female');"><i
-			class="fa fa-microphone" aria-hidden="true"></i></a></span>
+				class="fa fa-volume-up" aria-hidden="true"></i></a></span>
 	</p>
 	<br>
 	<div class="type_buttons"></div>
@@ -57,10 +57,11 @@
 
 
 	</div>
-	<textarea class="form-control" rows="5" id="texto" name="texto" style="display:none;"></textarea>
+	<textarea class="form-control" rows="5" id="texto" name="texto"
+		style="display: none;"></textarea>
 	<div class="md-form">
-<!-- 		<label for="comment">Escribe aquí:</label> -->
-<!-- 		<textarea class="md-textarea" rows="3" id="texto" name="texto"></textarea> -->
+		<!-- 		<label for="comment">Escribe aquí:</label> -->
+		<!-- 		<textarea class="md-textarea" rows="3" id="texto" name="texto"></textarea> -->
 		<a href="#" onClick="guardarResultado();"
 			class="btn btn-info pull-right">Siguiente</a>
 	</div>

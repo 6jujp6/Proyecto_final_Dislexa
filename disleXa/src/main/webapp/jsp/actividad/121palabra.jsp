@@ -3,9 +3,11 @@
 
 
 	<h4 id="text" class="text-jutify">
-		Te voy a dictar algunas palabras para que vos escribas <a href="#" class="btn btn-info"
-			onclick="responsiveVoice.speak(document.getElementById('text').innerText, 'Spanish Female');"><i
-			class="fa fa-microphone" aria-hidden="true"></i></a>
+		Escribe la palabra que oigas: <a href="#"
+			class="btn btn-info"
+			onclick="responsiveVoice.speak(document.getElementById('text').innerText, 'Spanish Female');">
+			<i class="fa fa-volume-up" aria-hidden="true"></i>
+		</a>
 	</h4>
 	<br> <br>
 
@@ -15,7 +17,7 @@
 				class="btn btn-success center-block"
 				onclick="responsiveVoice.speak('Paleta', 'Spanish Latin American Female');"
 				type="button" value="Dictar" />
-				
+
 		</div>
 		<div class="col-md-3">
 			<div class="form-group">
@@ -127,15 +129,15 @@
 		</div>
 	</div>
 
-<!-- 	<br> <label for="comment">Avance:</label> -->
-<!-- 	<div class="progress"> -->
-<!-- 		<div class="progress-bar" role="progressbar" aria-valuenow="70" -->
-<!-- 			aria-valuemin="0" aria-valuemax="100" style="width: 25%">25%</div> -->
-<!-- 	</div> -->
-		<a href="#" onClick="guardarResultado();"
-			class="btn btn-info pull-right">Siguiente</a>
-<!-- 	<ul class="pager"> -->
-<!-- 		<li class="previous"><a href="#">Anterior</a></li> -->
-<!-- 		<li class="next"><a href="#">Siguiente</a></li> -->
-<!-- 	</ul> -->
+	<!-- 	<br> <label for="comment">Avance:</label> -->
+	<!-- 	<div class="progress"> -->
+	<!-- 		<div class="progress-bar" role="progressbar" aria-valuenow="70" -->
+	<!-- 			aria-valuemin="0" aria-valuemax="100" style="width: 25%">25%</div> -->
+	<!-- 	</div> -->
+	<a href="#" onClick="guardarResultado();"
+		class="btn btn-info pull-right">Siguiente</a>
+	<!-- 	<ul class="pager"> -->
+	<!-- 		<li class="previous"><a href="#">Anterior</a></li> -->
+	<!-- 		<li class="next"><a href="#">Siguiente</a></li> -->
+	<!-- 	</ul> -->
 </div>

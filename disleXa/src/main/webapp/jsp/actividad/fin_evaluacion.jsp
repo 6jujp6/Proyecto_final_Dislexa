@@ -1,1 +1,1 @@
-TERMINASTE LA EVALUACION!
+<img class="animated tada" src="/disleXa/img/fin_juego.jpg" />

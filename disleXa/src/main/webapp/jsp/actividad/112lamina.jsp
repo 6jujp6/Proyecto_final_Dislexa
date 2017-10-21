@@ -8,10 +8,10 @@
 	<s:hidden name="idEjecEvalActiv" id="idEjecEvalActiv" />
 	<s:hidden name="idEjecEval" id="idEjecEval" />
 	<h4 id="text" class="text-jutify">
-		Escribe lo que quieras sobre esta figura <a href="#"
-			class="btn btn-info"
-			onclick="responsiveVoice.speak(document.getElementById('text').innerText, 'Spanish Female');"><i
-			class="fa fa-microphone" aria-hidden="true"></i></a>
+		Escribe lo que ves en la imagen: <a href="#" class="btn btn-info"
+			onclick="responsiveVoice.speak(document.getElementById('text').innerText, 'Spanish Female');">
+			<i class="fa fa-volume-up" aria-hidden="true"></i>
+		</a>
 	</h4>
 	<div class="row justify-content-md-center">
 		<img class="animated tada" src="/disleXa/images/parque.jpg"
