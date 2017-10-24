@@ -15,7 +15,8 @@ function setearGrillaAlumnos(){
 			           	'Apellido',
 			           	'Documento',
 			           	'Curso',
-			           	'Estado Eval.'
+			           	'Estado Eval.',
+			           	'Resultado' // botón detalle
 			],
 			colModel : [
 			{	name : 'idAlumno',
@@ -23,7 +24,6 @@ function setearGrillaAlumnos(){
 				hidden : true
 			}, {
 				name : 'nombre',
-				key : true,
 				width : 150
 			}, {
 				name : 'apellido',
@@ -34,14 +34,22 @@ function setearGrillaAlumnos(){
 			}
 			, {
 				name : 'curso',
-				width :150
+				width :70
 			}
 			, {
 				name : 'estadoEvaluacion',
 				width :150
 			}
+			,{
+				formatter:function (cellvalue, options, rowObject) {
+					if(rowObject.estadoEvaluacion=='PENDIENTE DE DIAGNOSTICO')
+						return botonDetalleEvaluacion(options.rowId);
+					else
+						return '';	
+				}
+			}
 			],
-			height : '250' ,
+			height : '350' ,
 			width: null ,
 			shrinkToFit: false ,
 			loadui : 'block' ,
@@ -53,7 +61,78 @@ function setearGrillaAlumnos(){
 			sortable : true 
 			});
 		}
+function botonDetalleEvaluacion(id) {
+	//var span = '<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Ver';
+	var span = '<button type="button" class="btn btn-info btn-sm" onclick="verDetalleEvaluacion(' + id	+ ')" >Ver';
+	span = span + '</button>';
+	return span;
+}
 
+function verDetalleEvaluacion(id){
+	//obtener los resultados en un una lista y mostrar el modal
+//	var resoluciones = '';
+//	$.ajax({
+//		url : 'paciente/obtenerResultados',
+//		type : "GET",
+//		data : {
+//			"idAlumno" :  id
+//		},		
+//		contentType : false,
+//		success: function (data) {
+//			$.each(data, function(i,item){
+//				resoluciones = resoluciones + '<div id = ' + i + 'class="panel panel-default"> <div class="panel-body">' + item.resolucion + ' </div></div>';
+//			});
+//			
+//			//<p>hola</p>
+//			document.getElementById('actividadesResueltas').innerHTML=resoluciones;
+//			$("#myModal").modal("show");
+//		},
+//		
+//		error: function (xhr, ajaxOptions, thrownError) {
+//			alert("error");				
+//		}
+//	});
+	$.jgrid.gridUnload("#grillaResultados");
+	$("#grillaResultados").jqGrid({
+		datatype : 'json',
+		url : 'paciente/obtenerResultados',
+		postData : {
+			"idAlumno" :  id
+		},	
+		colNames : [ 
+		            'Id',		  
+		            'Actividad',
+		            'Objetivo',
+		           	'Resolucion'  
+		],
+		colModel : [
+		{	name : 'idEjecucion_evaluacion_actividad',
+			key : true,
+			hidden : true
+		}, {
+			name : 'actividad.descripcion',
+			width :150
+		},{
+			name : 'actividad.objetivo',
+			width :150
+		}, {
+			name : 'resolucion',
+			width :150
+		}
+		],
+		height : '350' ,
+		width: null ,
+		shrinkToFit: false ,
+		loadui : 'block' ,
+		loadonce: true ,
+		rowNum: 20,
+		scroll: 1, // PARA HABILITAR EL VIRTUAL SCROLL
+		gridview : true ,
+		autoencode : true ,
+		sortable : true 
+		});
+	$("#myModal").modal("show");
+}
 function cargarComboCurso() {
 	$.ajax({
 		type : "POST",

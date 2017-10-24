@@ -11,7 +11,7 @@
 			<input type="text" class="form-control" id="apellido">
 		</div>
 		<div class="md-form">
-		<label for="fechaNac" class="">Fecha de naciemiento</label>
+		<label for="fechaNac" class="">Fecha de nacimiento</label>
 			<input type="text" class="form-control" id="fechaNac">
 		</div>
 		

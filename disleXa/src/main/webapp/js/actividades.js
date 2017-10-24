@@ -14,7 +14,7 @@ function empezar(){
 		}
 	});
 }
-	
+
 function guardarResultado(){
 	$.ajax({
 		url : 'paciente/guardarResultado',

@@ -23,6 +23,10 @@ public class InstitucionAction extends BaseAction {
 		return "SUCCESS";
 	}
 	
+	public String misCursos(){
+		return "SUCCESS";
+	}
+	
 	public List<Curso> getListaCursosResultado() {
 		return cursos;
 	}

@@ -30,4 +30,8 @@ public class UsuarioService extends BaseService{
 	public Usuario buscarPorLogin(String mail, String password){
 		return getUsuarioDao().obtenerPorLogin(mail, password);
 	}
+
+	public Usuario obtenerUsuarioPorId(int id) {
+		return getUsuarioDao().obtenerPorId(id);
+	}
 }

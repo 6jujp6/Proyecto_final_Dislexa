@@ -6,12 +6,15 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import ar.edu.unlam.integrador.entities.Actividad;
+import ar.edu.unlam.integrador.entities.ActividadResuelta;
 import ar.edu.unlam.integrador.entities.AlumnoEvaluacion;
 import ar.edu.unlam.integrador.entities.AlumnoPaciente;
 import ar.edu.unlam.integrador.entities.Curso;
 import ar.edu.unlam.integrador.entities.EjecucionEvaluacion;
 import ar.edu.unlam.integrador.entities.EjecucionEvaluacionActividad;
 import ar.edu.unlam.integrador.entities.Institucion;
+import ar.edu.unlam.integrador.entities.Usuario;
 import ar.edu.unlam.integrador.service.FactoryService;
 
 public class AlumnoAction extends BaseAction{
@@ -19,6 +22,8 @@ public class AlumnoAction extends BaseAction{
 	private static final long serialVersionUID = 1L;
 	//private List<AlumnoPaciente> alumnos = null;
 	private List<AlumnoEvaluacion> alumnos = null;
+	//private List<ActividadResuelta> resultados = null;
+	private List<EjecucionEvaluacionActividad> resultados = null;
 	
 	private String nombre;
 	private String apellido;
@@ -29,6 +34,8 @@ public class AlumnoAction extends BaseAction{
 	private int idEjecEvalActiv;
 	private int idEjecEval;
 	private String resolucion;
+	private int idAlumno;
+	
 
 	public AlumnoAction(){		
 	}
@@ -110,8 +117,7 @@ public class AlumnoAction extends BaseAction{
 					actividad.setResolucion(resolucion);
 					factory.getEjecucionEvaluacionActividadService().actualizar(actividad);
 					setResolucion(null);					
-					}
-				
+					}				
 			}
 		}
 		else{
@@ -138,6 +144,39 @@ public class AlumnoAction extends BaseAction{
     }
     public void setListaAlumnoResultado(List<AlumnoEvaluacion> lista) {
     	alumnos = lista;
+    }
+    
+    public String obtenerResultados(){
+    	FactoryService factory = getFactoryService();
+    	List<ActividadResuelta> actividadesResuelta = new ArrayList<ActividadResuelta>();
+    	AlumnoPaciente alumno = (AlumnoPaciente)factory.getUsuarioService().obtenerUsuarioPorId(idAlumno);	
+    	
+    	ejecucionEvaluacion = factory.getEjecucionEvaluacionService().obtenerPorAlumno(alumno);
+    	List<EjecucionEvaluacionActividad> actividadesEvaluacion = factory.getEjecucionEvaluacionActividadService().obtenerActividadesPorEjecucionEvaluacion(ejecucionEvaluacion);
+    	
+//    	for(EjecucionEvaluacionActividad resolucion : actividadesEvaluacion){
+//    		ActividadResuelta actividad = new ActividadResuelta();
+//    		actividad.setResolucion(resolucion.getResolucion());
+//    		
+//    		Actividad actividad = resolucion.getActividad();
+//    		
+//    	}
+    	
+    	
+//    	setListaResultado(actividadesResuelta);
+    	setListaResultado(actividadesEvaluacion);
+    	
+    	return SUCCESS;
+    }
+    
+    //public List<ActividadResuelta> getListaResultado(){
+    public List<EjecucionEvaluacionActividad> getListaResultado(){
+    	return resultados;
+    }
+    
+   // public void setListaResultado(List<ActividadResuelta> lista){
+    public void setListaResultado(List<EjecucionEvaluacionActividad> lista){    
+    	resultados = lista;
     }
 
 	public String getNombre() {
@@ -210,5 +249,13 @@ public class AlumnoAction extends BaseAction{
 
 	public void setIdCurso(int idCurso) {
 		this.idCurso = idCurso;
+	}
+
+	public int getIdAlumno() {
+		return idAlumno;
+	}
+
+	public void setIdAlumno(int idAlumno) {
+		this.idAlumno = idAlumno;
 	}		
 }

@@ -1,1 +1,1 @@
-<img class="animated tada" src="/disleXa/img/fin_juego.jpg" />
+<img class="animated tada" src="/disleXa/img/fin_juego.jpg" /> 

@@ -11,8 +11,8 @@
 			aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<a class="navbar-brand" href="#"> <img
-			src="/disleXa/img/isologo/isologo.png" />
+		<a class="navbar-brand" href="#"> <img class="isologo"
+			src="/disleXa/img/isologo/isologo3.png" />
 		</a>
 		<div class="collapse navbar-collapse" id="navbarNav1">
 			<ul class="navbar-nav ml-auto">
@@ -38,18 +38,11 @@
 
 			<div class="widget-wrapper">
 				<div class="list-group">
-
-					<a href="#" class="list-group-item active">Bienvenido  <s:text name="nombre"></s:text></a> <a href="javascript:void(0);"
-						onclick="cargarActionContenido('institucion/misAlumnos', 'divContenidoInstitucion');"
-						class="list-group-item"><span class="glyphicon glyphicon-user"></span>
-						Mis alumnos</a> <a href="javascript:void(0);"
-						onclick="cargarActionContenido('institucion/datosPersonales', 'divContenidoInstitucion');"
-						class="list-group-item"><span class="glyphicon glyphicon-cog"></span>
-						Datos de la institucion</a> <a href="javascript:void(0);"
-						onclick="cargarActionContenido('institucion/historico', 'divContenidoInstitucion');"
-						class="list-group-item"><span class="glyphicon glyphicon-book"></span>
-						Historico</a>
-
+					<a href="#" class="list-group-item active">Bienvenido  <s:text name="nombre"></s:text></a> 
+					<a href="javascript:void(0);" onclick="cargarActionContenido('institucion/misCursos', 'divContenidoInstitucion');"	class="list-group-item"><span class="glyphicon glyphicon-user"></span>Mis cursos</a>
+					<a href="javascript:void(0);" onclick="cargarActionContenido('institucion/misAlumnos', 'divContenidoInstitucion');"	class="list-group-item"><span class="glyphicon glyphicon-user"></span>Mis alumnos</a>					
+					<a href="javascript:void(0);"onclick="cargarActionContenido('institucion/datosPersonales', 'divContenidoInstitucion');"	class="list-group-item"><span class="glyphicon glyphicon-cog"></span>Datos de la institucion</a> 
+					<a href="javascript:void(0);"onclick="cargarActionContenido('institucion/historico', 'divContenidoInstitucion');"class="list-group-item"><span class="glyphicon glyphicon-book"></span>Historico</a>
 				</div>
 			</div>
 
@@ -84,99 +77,7 @@
 			<br>
 
 			<!--Second row-->
-			<div class="row">
-				<!--First columnn-->
-				<div class="col-lg-4">
-					<!--Card-->
-					<div class="card  wow fadeIn" data-wow-delay="0.2s">
-
-						<!--Card image-->
-						<div class="view overlay hm-white-slight">
-							<img
-								src="/disleXa/img/design/escribiendo.jpg"
-								class="img-fluid" alt=""> <a href="#">
-								<div class="mask"></div>
-							</a>
-						</div>
-						<!--/.Card image-->
-
-						<!--Card content-->
-						<div class="card-block">
-							<!--Title-->
-							<h4 class="card-title">Ultimas noticias</h4>
-							<!--Text-->
-							<p class="card-text">Informece sobre las dificultades del aprendizaje.</p>
-							<a href="#" class="btn btn-default">Leer mas</a>
-						</div>
-						<!--/.Card content-->
-
-					</div>
-					<!--/.Card-->
-				</div>
-				<!--First columnn-->
-
-				<!--Second columnn-->
-				<div class="col-lg-4">
-					<!--Card-->
-					<div class="card  wow fadeIn" data-wow-delay="0.4s">
-
-						<!--Card image-->
-						<div class="view overlay hm-white-slight">
-							<img
-								src="/disleXa/img/design/escribiendo.jpg"
-								class="img-fluid" alt=""> <a href="#">
-								<div class="mask"></div>
-							</a>
-						</div>
-						<!--/.Card image-->
-
-						<!--Card content-->
-						<div class="card-block">
-							<!--Title-->
-							<h4 class="card-title">Ultimas noticias</h4>
-							<!--Text-->
-							<p class="card-text">Informece sobre las dificultades del aprendizaje.</p>
-							<a href="#" class="btn btn-default">Leer mas</a>
-						</div>
-						<!--/.Card content-->
-
-					</div>
-					<!--/.Card-->
-				</div>
-				<!--Second columnn-->
-
-				<!--Third columnn-->
-				<div class="col-lg-4">
-					<!--Card-->
-					<div class="card  wow fadeIn" data-wow-delay="0.6s">
-
-						<!--Card image-->
-						<div class="view overlay hm-white-slight">
-							<img
-								src="/disleXa/img/design/escribiendo.jpg"
-								class="img-fluid" alt=""> <a href="#">
-								<div class="mask"></div>
-							</a>
-						</div>
-						<!--/.Card image-->
-
-						<!--Card content-->
-						<div class="card-block">
-							<!--Title-->
-							<h4 class="card-title">Ultimas noticias</h4>
-							<!--Text-->
-							<p class="card-text">Informece sobre las dificultades del aprendizaje.</p>
-							<a href="#" class="btn btn-default">Leer mas</a>
-						</div>
-						<!--/.Card content-->
-
-					</div>
-					<!--/.Card-->
-				</div>
-				<!--Third columnn-->
-			</div>
-			<!--/.Second row-->
-
+			
 		</div>
 		<!--/.Main column-->
 

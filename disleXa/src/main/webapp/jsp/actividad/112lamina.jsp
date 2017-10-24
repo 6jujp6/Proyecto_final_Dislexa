@@ -20,23 +20,16 @@
 	<br>
 	<div class="md-form">
 		<label for="comment">Escribe aquí:</label>
-		<textarea class="md-textarea" rows="3" id="texto" name="texto"></textarea>
-		<a href="#" onClick="guardarResultado();"
+		<textarea class="md-textarea" rows="3" id="textoPlaza" name="texto"></textarea>
+		<a href="#" onClick="concatenar(); guardarResultado();"
 			class="btn btn-info pull-right">Siguiente</a>
-	</div>
-
-	<!-- 	<label for="comment">Avance:</label> -->
-	<!-- 	<div class="progress"> -->
-	<!-- 		<div class="progress-bar bg-info" role="progressbar" -->
-	<!-- 			aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" -->
-	<!-- 			style="width: 8.33%">8.33%</div> -->
-	<!-- 	</div> -->
-
-
 </div>
 
+	<input type="hidden" id="texto" name="texto">
 <script>
 	$.getScript("/disleXa/js/actividades.js");
 
-	
+	function concatenar(){
+		$('#texto').val('Imagen plaza: ' + $('#textoPlaza').val());	
+		}
 </script>

@@ -10,6 +10,7 @@ import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Restrictions;
 
 import ar.edu.unlam.integrador.dao.base.BaseDao;
+import ar.edu.unlam.integrador.entities.AlumnoPaciente;
 import ar.edu.unlam.integrador.entities.Usuario;
 
 public class UsuarioDao extends BaseDao<Usuario>{
@@ -35,5 +36,11 @@ public class UsuarioDao extends BaseDao<Usuario>{
         
         Usuario res = (Usuario) criteria.uniqueResult();
         return res;
+	}
+
+	public Usuario obtenerPorId(int id) {
+		Session s = getSessionFactory().getCurrentSession();
+		Usuario usuario = (Usuario) s.get(Usuario.class, id);
+		return usuario;
 	}
 }

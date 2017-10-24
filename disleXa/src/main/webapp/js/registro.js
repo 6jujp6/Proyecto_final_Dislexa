@@ -1,5 +1,5 @@
 function registroInstitucion(){
-	if(validarInputs()){
+	if(validarInputsReg()){
 		$.ajax({
 			url : 'index/registroInstitucion',
 			type : "GET",
@@ -21,7 +21,7 @@ function registroInstitucion(){
 	}
 }
 
-function validarInputs(){
+function validarInputsReg(){
 	if($('#nombre').val()=='')
 		jQuery('#nombre').addClass('invalid');
 	if($('#emailReg').val()=='')

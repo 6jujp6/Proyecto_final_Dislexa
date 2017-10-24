@@ -22,7 +22,7 @@
 				<img src="/disleXa/img/libro.jpg" alt="Lights" style="width: 100%">
 				<div class="md-form">
 					<label for="nombre" class="">Escribe aquí:</label> <input
-						type="text" class="form-control" id="texto" name="texto">
+						type="text" class="form-control" id="libro" name="texto">
 				</div>
 
 			</div>
@@ -33,7 +33,7 @@
 					style="width: 100%">
 				<div class="md-form">
 					<label for="nombre" class="">Escribe aquí:</label> <input
-						type="text" class="form-control" id="texto" name="texto">
+						type="text" class="form-control" id="televisor" name="texto">
 				</div>
 			</div>
 		</div>
@@ -42,29 +42,36 @@
 				<img src="/disleXa/img/auto.jpg" alt="Lights" style="width: 100%">
 				<div class="md-form">
 					<label for="nombre" class="">Escribe aquí:</label> <input
-						type="text" class="form-control" id="texto" name="texto">
+						type="text" class="form-control" id="auto" name="texto">
 				</div>
 			</div>
 		</div>
 		<div class="col-md-3">
 			<div class="thumbnail">
-				<img src="/disleXa/imgs/smartphone.jpg" alt="Lights"
+				<img src="/disleXa/img/smartphone.jpg" alt="Lights"
 					style="width: 100%">
 				<div class="md-form">
 					<label for="nombre" class="">Escribe aquí:</label> <input
-						type="text" class="form-control" id="texto" name="texto">
+						type="text" class="form-control" id="smart" name="texto">
 				</div>
 			</div>
 		</div>
-
 	</div>
-
-	<a href="#" onClick="guardarResultado();"
-		class="btn btn-info pull-right">Siguiente</a>
+	<div class="row">
+		<div class="col-md-12">
+			<a href="#" onClick="concatenar(); guardarResultado();"
+				class="btn btn-info pull-right">Siguiente</a>
+		</div>
+	</div>
+	<div class="row">
+		<input type="hidden" id="texto" name="texto">
+	</div>
 </div>
 
 <script>
 	$.getScript("/disleXa/js/actividades.js");
 
-	
+	function concatenar(){
+		$('#texto').val('Libro: ' + $('#libro').val()+', Televisor: '+ $('#televisor').val()+', Automovil: '+$('#auto').val()+', Smarthpone: '+$('#smart').val());	
+		}
 </script>
