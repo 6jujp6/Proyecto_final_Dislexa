@@ -1,5 +1,7 @@
 package ar.edu.unlam.integrador.entities;
 
+import java.util.Date;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -36,6 +38,12 @@ public class EjecucionEvaluacionActividad extends BaseEntity {
 	
 	@Column(name="resolucion")
     private String resolucion;
+	
+	@Column(name="evaluacion_profesional")
+	private String evaluacionProfesional;
+	
+	@Column(name="fecha")
+	private Date fecha;
 
 	public int getIdEjecucionEvaluacionActividad() {
 		return idEjecucionEvaluacionActividad;
@@ -68,4 +76,20 @@ public class EjecucionEvaluacionActividad extends BaseEntity {
 	public void setResolucion(String resolucion) {
 		this.resolucion = resolucion;
 	}
+
+	public String getEvaluacionProfesional() {
+		return evaluacionProfesional;
+	}
+
+	public void setEvaluacionProfesional(String evaluacionProfesional) {
+		this.evaluacionProfesional = evaluacionProfesional;
+	}	
+
+	public Date getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
+	}	
 }

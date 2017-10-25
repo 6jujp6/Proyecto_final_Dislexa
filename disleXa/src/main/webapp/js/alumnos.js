@@ -42,7 +42,7 @@ function setearGrillaAlumnos(){
 			}
 			,{
 				formatter:function (cellvalue, options, rowObject) {
-					if(rowObject.estadoEvaluacion=='PENDIENTE DE DIAGNOSTICO')
+					if(rowObject.estadoEvaluacion=='PENDIENTE DE DIAGNÓSTICO')
 						return botonDetalleEvaluacion(options.rowId);
 					else
 						return '';	
@@ -61,37 +61,19 @@ function setearGrillaAlumnos(){
 			sortable : true 
 			});
 		}
-function botonDetalleEvaluacion(id) {
-	//var span = '<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Ver';
+function botonDetalleEvaluacion(id) {	
 	var span = '<button type="button" class="btn btn-info btn-sm" onclick="verDetalleEvaluacion(' + id	+ ')" >Ver';
 	span = span + '</button>';
 	return span;
 }
 
+function selectEvaluacionProfesional(id){
+	var span = '<select class="form-control" id="eval' + id	+ '"><option>BIEN</option><option>CON ERRORES</option></select>';
+	//span = span + '</button>';
+	return span;	
+}
+
 function verDetalleEvaluacion(id){
-	//obtener los resultados en un una lista y mostrar el modal
-//	var resoluciones = '';
-//	$.ajax({
-//		url : 'paciente/obtenerResultados',
-//		type : "GET",
-//		data : {
-//			"idAlumno" :  id
-//		},		
-//		contentType : false,
-//		success: function (data) {
-//			$.each(data, function(i,item){
-//				resoluciones = resoluciones + '<div id = ' + i + 'class="panel panel-default"> <div class="panel-body">' + item.resolucion + ' </div></div>';
-//			});
-//			
-//			//<p>hola</p>
-//			document.getElementById('actividadesResueltas').innerHTML=resoluciones;
-//			$("#myModal").modal("show");
-//		},
-//		
-//		error: function (xhr, ajaxOptions, thrownError) {
-//			alert("error");				
-//		}
-//	});
 	$.jgrid.gridUnload("#grillaResultados");
 	$("#grillaResultados").jqGrid({
 		datatype : 'json',
@@ -103,10 +85,12 @@ function verDetalleEvaluacion(id){
 		            'Id',		  
 		            'Actividad',
 		            'Objetivo',
-		           	'Resolucion'  
+		            'Fecha',
+		           	'Resol. del alumno',
+		           	'Eval. Profesional'
 		],
 		colModel : [
-		{	name : 'idEjecucion_evaluacion_actividad',
+		{	name : 'idEjecucionEvaluacionActividad',
 			key : true,
 			hidden : true
 		}, {
@@ -116,8 +100,17 @@ function verDetalleEvaluacion(id){
 			name : 'actividad.objetivo',
 			width :150
 		}, {
+			name : 'fecha',
+			formatter: 'date',
+			formatoptions: { srcformat: 'ISO8601Long', newformat: 'd/m/Y'},
+			width :150
+		}, {
 			name : 'resolucion',
 			width :150
+		},{
+			formatter:function (cellvalue, options, rowObject) {
+				return selectEvaluacionProfesional(options.rowId);
+			}
 		}
 		],
 		height : '350' ,
@@ -155,6 +148,34 @@ function cargarComboCurso() {
 	);
 	$("#cboCurso").prepend("<option value=''></option>").val('');
 }
+
+function generarReporte(){
+	//recorrer grilla
+	var evaluacionActividades = "";
+	var allRowsInGrid = $('#grillaResultados').jqGrid('getRowData');
+	  for (i = 0; i < allRowsInGrid.length; i++) {		  
+		  var id = allRowsInGrid[i].idEjecucionEvaluacionActividad;
+		  var idSelect = "eval" + id;
+		  evaluacionActividades = evaluacionActividades + id + "," + $('#'+ idSelect +'').val() + ";";
+	  }
+	$.ajax({
+		type : "POST",
+		url : "paciente/generarReporte",
+		data : {
+			"evaluacionActividades" : evaluacionActividades
+		},	
+	}).done(			
+		function(data, textStatus, jqXHR) {	
+			$("#myModal").modal("hide");
+			cargarHTMLContenido(data, 'divModalReporte');
+		}
+	).fail(			
+		function(jqXHR, responseText, errorThrow) {
+			alert(errorThrow);
+		}
+	);
+}
+
 
 $(document).ready(function() {
 	cargarComboCurso();

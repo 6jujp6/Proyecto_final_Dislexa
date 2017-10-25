@@ -56,6 +56,9 @@
 				<param name="root">listaResultado</param>
 			</result>
 		</action>
+		<action name="generarReporte" class="ar.edu.unlam.integrador.web.action.AlumnoAction" method="generarReporte">
+			<result name="success">/jsp/paciente/reporte.jsp</result>
+		</action>
 		<action name="actividades" class="ar.edu.unlam.integrador.web.action.AlumnoAction" method="buscarActividades">
 			<result name="success">/jsp/paciente/actividades.jsp</result>
 		</action>

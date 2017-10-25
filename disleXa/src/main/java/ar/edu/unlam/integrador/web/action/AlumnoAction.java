@@ -6,34 +6,33 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import ar.edu.unlam.integrador.entities.Actividad;
-import ar.edu.unlam.integrador.entities.ActividadResuelta;
 import ar.edu.unlam.integrador.entities.AlumnoEvaluacion;
 import ar.edu.unlam.integrador.entities.AlumnoPaciente;
+import ar.edu.unlam.integrador.entities.AnalisisRiesgo;
 import ar.edu.unlam.integrador.entities.Curso;
 import ar.edu.unlam.integrador.entities.EjecucionEvaluacion;
 import ar.edu.unlam.integrador.entities.EjecucionEvaluacionActividad;
 import ar.edu.unlam.integrador.entities.Institucion;
-import ar.edu.unlam.integrador.entities.Usuario;
 import ar.edu.unlam.integrador.service.FactoryService;
 
 public class AlumnoAction extends BaseAction{
 
 	private static final long serialVersionUID = 1L;
-	//private List<AlumnoPaciente> alumnos = null;
 	private List<AlumnoEvaluacion> alumnos = null;
-	//private List<ActividadResuelta> resultados = null;
 	private List<EjecucionEvaluacionActividad> resultados = null;
+	
+	private EjecucionEvaluacion ejecucionEvaluacion = new EjecucionEvaluacion();
+	private AnalisisRiesgo analisisRiesgo = new AnalisisRiesgo();
 	
 	private String nombre;
 	private String apellido;
 	private Long dni;
 	private int idCurso;
 	private boolean esAlumno;
-	private EjecucionEvaluacion ejecucionEvaluacion = new EjecucionEvaluacion();
 	private int idEjecEvalActiv;
 	private int idEjecEval;
 	private String resolucion;
+	private String evaluacionActividades;
 	private int idAlumno;
 	
 
@@ -65,13 +64,35 @@ public class AlumnoAction extends BaseAction{
 			if(ejecucionEvaluacion==null)
 				alumnoEval.setEstadoEvaluacion("NO ASIGNADO");
 			else if(ejecucionEvaluacion.getPendienteDiagnostico())
-				alumnoEval.setEstadoEvaluacion("PENDIENTE DE DIAGNOSTICO");
+				alumnoEval.setEstadoEvaluacion("PENDIENTE DE DIAGNÓSTICO");
 				else
-					alumnoEval.setEstadoEvaluacion("PENDIENTE DE RESOLUCION");
+					alumnoEval.setEstadoEvaluacion("PENDIENTE DE RESOLUCIÓN");
 			listaAlumnoEval.add(alumnoEval);
 			}
-		
 		setListaAlumnoResultado(listaAlumnoEval);
+		return SUCCESS;
+	}
+	
+	public String generarReporte(){
+		FactoryService factory = getFactoryService();
+		String evaluacionesProfesional[] = evaluacionActividades.split(";");
+		EjecucionEvaluacionActividad actividad = new EjecucionEvaluacionActividad();
+		AlumnoPaciente alumno = new AlumnoPaciente();
+		
+		for(int i=0;i<evaluacionesProfesional.length;i++){
+			String evaluacionesProfesionalActividad[] = evaluacionesProfesional[i].split(",");
+			actividad = factory.getEjecucionEvaluacionActividadService().obtenerPorId(Integer.parseInt(evaluacionesProfesionalActividad[0]));
+			actividad.setEvaluacionProfesional(evaluacionesProfesionalActividad[1]);	
+			factory.getEjecucionEvaluacionActividadService().actualizar(actividad);
+		}
+		
+		alumno = actividad.getEjecucionEvaluacion().getAlumnoPaciente();
+		ejecucionEvaluacion = factory.getEjecucionEvaluacionService().obtenerPorAlumno(alumno);
+    	List<EjecucionEvaluacionActividad> actividadesEvaluacion = factory.getEjecucionEvaluacionActividadService().obtenerActividadesPorEjecucionEvaluacion(ejecucionEvaluacion);
+
+		setAnalisisRiesgo(factory.getAlumnoPacienteService().generarAnalisisRiesgo(alumno, actividadesEvaluacion));
+    	
+		setNombre(getAnalisisRiesgo().getNombre());
 		return SUCCESS;
 	}
 	
@@ -115,6 +136,7 @@ public class AlumnoAction extends BaseAction{
 			for(EjecucionEvaluacionActividad actividad : actividadesEvaluacion){
 				if(actividad.getIdEjecucionEvaluacionActividad()==idEjecEvalActiv){
 					actividad.setResolucion(resolucion);
+					actividad.setFecha(new Date());
 					factory.getEjecucionEvaluacionActividadService().actualizar(actividad);
 					setResolucion(null);					
 					}				
@@ -148,33 +170,20 @@ public class AlumnoAction extends BaseAction{
     
     public String obtenerResultados(){
     	FactoryService factory = getFactoryService();
-    	List<ActividadResuelta> actividadesResuelta = new ArrayList<ActividadResuelta>();
     	AlumnoPaciente alumno = (AlumnoPaciente)factory.getUsuarioService().obtenerUsuarioPorId(idAlumno);	
     	
     	ejecucionEvaluacion = factory.getEjecucionEvaluacionService().obtenerPorAlumno(alumno);
     	List<EjecucionEvaluacionActividad> actividadesEvaluacion = factory.getEjecucionEvaluacionActividadService().obtenerActividadesPorEjecucionEvaluacion(ejecucionEvaluacion);
-    	
-//    	for(EjecucionEvaluacionActividad resolucion : actividadesEvaluacion){
-//    		ActividadResuelta actividad = new ActividadResuelta();
-//    		actividad.setResolucion(resolucion.getResolucion());
-//    		
-//    		Actividad actividad = resolucion.getActividad();
-//    		
-//    	}
-    	
-    	
-//    	setListaResultado(actividadesResuelta);
+
     	setListaResultado(actividadesEvaluacion);
     	
     	return SUCCESS;
     }
     
-    //public List<ActividadResuelta> getListaResultado(){
     public List<EjecucionEvaluacionActividad> getListaResultado(){
     	return resultados;
     }
     
-   // public void setListaResultado(List<ActividadResuelta> lista){
     public void setListaResultado(List<EjecucionEvaluacionActividad> lista){    
     	resultados = lista;
     }
@@ -257,5 +266,21 @@ public class AlumnoAction extends BaseAction{
 
 	public void setIdAlumno(int idAlumno) {
 		this.idAlumno = idAlumno;
+	}
+
+	public String getEvaluacionActividades() {
+		return evaluacionActividades;
+	}
+
+	public void setEvaluacionActividades(String evaluacionActividades) {
+		this.evaluacionActividades = evaluacionActividades;
+	}
+
+	public AnalisisRiesgo getAnalisisRiesgo() {
+		return analisisRiesgo;
+	}
+
+	public void setAnalisisRiesgo(AnalisisRiesgo analisisRiesgo) {
+		this.analisisRiesgo = analisisRiesgo;
 	}		
 }
